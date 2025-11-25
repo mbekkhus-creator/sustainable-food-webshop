@@ -1,0 +1,884 @@
+/* ========================================
+   1. GLOBAL / VARIABLES / BASE
+   ======================================== */
+
+:root {
+  --bg-primary: #f7f2de;
+  --bg-white: #ffffff;
+  --border-light: #e0e0e0;
+  --red: #dc4131;
+  --red-hover: #ae2e21;
+  --green: #968f51;
+  --text-dark: #0b0a08;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  font-family: "Arimo", sans-serif;
+  color: var(--text-dark);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Skip-link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+.container {
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   2. HERO – DESKTOP
+   ======================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 1512px;
+  height: 850px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.hero-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 300;
+  font-size: 200px;
+  line-height: 1;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 0 40px;
+  position: relative;
+}
+
+.hero-title::after {
+  content: "";
+  width: 1px;
+  height: 208px;
+  background: white;
+  margin: 40px auto 0;
+  display: block;
+}
+
+.hero-sub {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 40px;
+}
+
+
+/* ========================================
+   4. CARD SECTION – DESKTOP
+   ======================================== */
+
+.cards-2 {
+  background: var(--bg-white);
+  padding: 90px 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 29px;
+  position: relative;
+}
+
+/* vertical divider (desktop) */
+.cards-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #000000;
+  left: 50%;
+  transform: translateX(-0.5px);
+}
+
+/* individual card */
+.card {
+  background: var(--bg-white);
+  padding: 32px 45px 56px;
+  text-align: center;
+  border: none;
+  min-height: 753px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheader {
+  font-family: "Arimo", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accent {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  min-height: 48px;
+}
+
+.card img {
+  width: 448px;
+  height: 327px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 32px auto;
+}
+
+.body {
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 360px;
+  margin: 0 auto 40px;
+  min-height: 68px;
+}
+
+
+/* ========================================
+   5. BUTTONS (shared)
+   ======================================== */
+
+.btn {
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.cards-2 .btn {
+  margin-top: auto;
+}
+
+.btn-red {
+  background-color: var(--red);
+}
+
+.btn-red:hover {
+  background-color: var(--red-hover);
+}
+
+.btn-green {
+  background-color: var(--green);
+}
+
+
+/* ========================================
+   7. HOW IT WORKS – DESKTOP
+   ======================================== */
+
+.how {
+  background: var(--bg-primary);
+  max-width: 1509px;
+  height: 788px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+/* venstre kolonne med overskrift */
+.how-left {
+  flex: 0 0 489px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+/* høyre kolonne med fire rader */
+.how-right {
+  flex: 0 0 1020px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #000000;
+}
+
+/* hver rad til høyre */
+.how-step {
+  flex: 0 0 197px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 45px 90px;
+  border-bottom: 1px solid #000000;
+}
+
+.how-step:last-child {
+  border-bottom: none; /* siste rad */
+}
+
+.how-step-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  min-width: 180px;
+}
+
+.how-step-body {
+  font-family: "Arimo", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.how-step-body a {
+  text-decoration: underline;
+}
+
+
+/* ========================================
+   8. POPULAR PRODUCE – DESKTOP
+   ======================================== */
+
+.popular {
+  background: #ffffff;
+  max-width: 1512px;
+  min-height: 800px;
+  margin: 0 auto;
+  padding: 90px 45px;
+  box-sizing: border-box;
+}
+
+.popular-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 45px 0;
+}
+
+/* tre kort på rad */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 29px;
+}
+
+/* Produktkort – matcher LS sin stil */
+.product-card {
+  max-width: 454px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Bildeboksen – desktop: 454 x 432 */
+.product-media {
+  position: relative;
+  width: 454px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ADD TO BASKET-knapp */
+.add-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  min-height: 38px;
+  background: #0b0a08;
+  color: #ffffff;
+  border: 0;
+  border-radius: 44px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  opacity: 0.4;
+  transform: translateY(-1px);
+}
+
+/* Produktnavn – desktop */
+.product-name {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: #0b0a08;
+  margin: 17px 0 0 0;
+  padding-left: 24px;
+  padding-right: 17px;
+}
+
+/* Info-linje – desktop: vekt + pris */
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 17px;
+  margin-top: 12px;
+}
+
+/* Vekt – desktop */
+.product-weight {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #1b1a1ecc;
+  margin: 0;
+}
+
+/* Pris – desktop: absolutt posisjon under navnet */
+.product-price {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #0b0a08;
+  white-space: nowrap;
+  word-break: keep-all;
+  position: absolute;
+  top: calc(432px + 17px);
+  right: 24px;
+}
+
+/* ========================================
+   FOOTER TOP LINE – DESKTOP
+   ======================================== */
+
+.footer-topline {
+  background: #dc4131;
+  height: 113px;
+  position: relative;
+  max-width: 1512;
+  margin: 0 auto;
+}
+
+.footer-topline .footer-logo {
+  position: absolute;
+  left: 45px;
+  top: 41px;
+  width: 122px;
+  height: 62px;
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-topline::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #fff;
+}
+
+
+/* ========================================
+   FOOTER MAIN – DESKTOP
+   ======================================== */
+
+.site-footer {
+  max-width: 1512px;
+  margin: 0 auto;
+  background: #dc4131;
+  color: #fff;
+  padding: 63px 43px 80px;
+}
+
+.footer-inner {
+  max-width: 1512px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-right {
+  margin-left: 14px;
+}
+
+.footer-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.footer-text {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 20px;
+  margin: 0 0 70px 0;
+  max-width: 300px;
+}
+
+
+/* ========================================
+   FOOTER FORM – DESKTOP
+   ======================================== */
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-input {
+  width: 460px;
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.footer-email-group {
+  position: relative;
+  width: 460px;
+  height: 44px;
+}
+
+.email-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.footer-submit {
+  position: absolute;
+  right: 12px;   /* pil inni feltet */
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer-submit svg {
+  width: 24px;
+  height: 24px;
+  stroke: #0b0a08;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-submit:hover svg {
+  opacity: 0.6;
+  transform: translateX(2px);
+}
+
+
+
+
+/* ========================================
+   MOBILE – 768PX 
+   ======================================== */
+
+@media (max-width: 768px) {
+
+ /* ---- HERO – MOBILE ---- */
+
+  .hero-img {
+    height: 579px;
+  }
+
+  .hero-overlay {
+    justify-content: flex-start;
+    padding-top: 125px;
+  }
+
+  .hero-title {
+    font-size: 75px;
+    margin: 0;
+  }
+
+  .hero-title::after {
+    height: 239.5px;
+    margin-top: 24px;
+  }
+
+  .hero-sub {
+    font-size: 24px;
+    line-height: 1;
+    max-width: 248px;
+    margin-top: 32px;
+  }
+
+
+
+
+  /* ---- CARD SECTION – MOBILE ---- */
+
+  .cards-2 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+
+  /* skjul den vertikale linja på mobil */
+  .cards-2::before {
+    display: none;
+  }
+
+  /* full bredde-linje nederst i seksjonen – svart */
+  .cards-2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #000000;
+  }
+
+  /* svart linje mellom øverste og nederste kort */
+  .card:first-child {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    min-height: 623px;   /* gir ca 1450px total seksjonshøyde */
+    padding: 32px 0 48px;
+  }
+
+  .card img {
+    max-width: 359px;
+    width: 100%;
+    height: auto;
+    margin: 24px auto 32px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 32px;
+    margin-bottom: 0;
+  }
+  
+
+/* ---- HOW IT WORKS – MOBILE ---- */
+
+  .how {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    padding: 90px 24px 0;      /* 90px fra toppen ned til overskriften */
+    flex-direction: column;
+    border-bottom: 1px solid #000;
+    border-top: none;
+    background: var(--bg-primary);
+  }
+
+  .how::before {
+    content: none;
+  }
+
+  /* overskrift-blokken */
+  .how-left {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 45px;      /* 45px ned til linja */
+  }
+
+  .how-title {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* linje under overskriften – HELT ut til kantene */
+  .how-left::after {
+    content: "";
+    position: absolute;
+    left: -24px;               /* drar linja ut gjennom sidemargin */
+    right: -24px;
+    bottom: 0;
+    height: 1px;
+    background: #000;
+  }
+
+  .how-right {
+    width: 100%;
+    border-left: none;
+    margin-top: 24px;
+  }
+
+  /* hvert step – linjer går helt ut, innhold har padding */
+  .how-step {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 24px 8px;   /* topp 24, sider 24, bunn 8 */
+    margin: 0 -24px;           /* gjør linjene full bredde */
+    border-bottom: 1px solid #000;
+  }
+
+  .how-step-title {
+    min-width: 0;
+    text-align: left;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+  }
+
+  .how-step-body {
+    max-width: none;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* siste step: 45px ned til nederste linje i seksjonen */
+  .how-step:last-child {
+    padding-bottom: 18px;
+  }
+
+
+
+
+  /* ---- POPULAR PRODUCE – MOBILE ---- */
+
+  .popular {
+    padding: 48px 24px;
+    min-height: auto;
+  }
+  
+    .popular-title {
+    margin-top: 16px;   /* litt luft over teksten */
+  }
+
+
+  /* horisontal scroll */
+  .product-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 29px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* hvert kort: 250px bredde */
+  .product-card {
+    flex: 0 0 250px;
+    width: 250px;
+    max-width: 250px;
+    scroll-snap-align: center;
+  }
+
+  /* bilde 250 x 321 på mobil */
+  .product-media {
+    width: 250px;
+    height: 321px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* NAVN (Oats / Red Onions ...) – under bildet */
+  .product-name {
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    margin: 16px 0 0 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Container for vekt/pris – vi bruker bare vekt i flow, pris absolutt */
+  .product-info {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 8px;
+  }
+
+  /* 1 kg under navnet */
+  .product-weight {
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: #1b1a1ecc;
+    margin: 0;
+  }
+
+  /* 48 kr / kg – samme linje som navnet (Oats), helt til høyre */
+  .product-price {
+    position: absolute;
+    top: calc(321px + 16px);  /* 321 bilde + 16 margin-top på navnet */
+    right: 0;
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  
+
+/* ---- FOOTER – MOBILE ---- */
+  .site-footer {
+    padding-left: 29px;
+    padding-right: 21px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    margin-top: 63px;
+  }
+
+  .footer-text {
+    font-size: 16px;
+    margin-top: 44px;
+    max-width: 279px;
+  }
+
+  .footer-form {
+    width: 329px;
+    margin-top: 36px;
+    gap: 16px;
+    padding-left: 3px;
+  }
+
+  .footer-input,
+  .footer-email-group {
+    width: 329px;
+  }
+
+  .footer-submit {
+    right: 12px;
+  }
+}

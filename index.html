@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRAM – Local Farms Delivery</title>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header / Nav FRA LS, denne ligger midlertid for visuelt -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="icon-btn" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">☰</button>
+      <div class="logo">FRAM</div>
+      <button class="icon-indicator" aria-label="Status indicator"></button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" hidden>
+    <button class="drawer-close" aria-label="Close menu">×</button>
+    <nav class="drawer-nav">
+      <a href="#products">Products</a>
+      <a href="#chat">Chat</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+  </aside>
+
+  <!-- Hero -->
+  <section class="hero" role="banner">
+    <img class="hero-img" src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/headerImage.png?raw=true" alt="Green mountains and sky" />
+    <div class="hero-overlay">
+      <h1 class="hero-title">FRAM</h1>
+      <p class="hero-sub">HOME DELIVERY FROM <br>YOUR LOCAL FARMS</p>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- Two cards: Seasonal + Chat -->
+<section class="container cards-2">
+  <article class="card">
+    <h2 class="subheader">SHOP OUR SEASONAL SELECTION</h2>
+    <p class="accent">Updated every week</p>
+
+    <img
+      src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/ShopSelection.png?raw=true"
+      alt="Seasonal vegetables"
+      loading="lazy">
+    
+
+    <p class="body">
+      New produce is added continuously as time goes by and the seasons change.
+    </p>
+    <a class="btn btn-red" href="#products">Browse our selection</a>
+  </article>
+
+  <article class="card">
+    <h2 class="subheader">ASK US ABOUT <br>ANYTHING</h2>
+    <p class="accent">All your questions answered</p>
+
+    <img
+      src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/goToChat.png?raw=true"
+      alt="Farmer in a field"
+      loading="lazy"
+    >
+
+    <p class="body">
+      New produce is added continuously as time goes by and the seasons change.
+    </p>
+    <a id="chat" class="btn btn-red" href="#chatbot">Go to chat</a>
+  </article>
+</section>
+
+
+    <!-- How it works -->
+    <section class="how">
+  <div class="how-left">
+   <h2 class="how-title">
+  THIS IS HOW IT<br class="mobile-br"> WORKS
+</h2>
+  </div>
+
+  <div class="how-right">
+    <div class="how-step">
+      <h3 class="how-step-title">ORDER GROCERIES</h3>
+      <p class="how-step-body">
+         Fram is a circular service that ensures your kitchen is always stocked with the essentials you need.
+    Browse our seasonal selection, choose your items, and place your order online.<br><br>
+    <a href="#">See our stock here</a>
+      </p>
+    </div>
+
+    <div class="how-step">
+      <h3 class="how-step-title">STOCK UP</h3>
+      <p class="how-step-body">
+        Once your order arrives, unpack the produce and store it however it works best for you. Hold onto the containers—they’re yours to keep until your next order.
+      </p>
+    </div>
+
+    <div class="how-step">
+      <h3 class="how-step-title">SCAN &amp; REORDER</h3>
+      <p class="how-step-body">
+        Ready for a refill? Grab the containers from your last order and scan the QR code with our app or your phone’s camera. This instantly adds the items back to your cart, making reordering a breeze.
+      </p>
+    </div>
+
+    <div class="how-step">
+      <h3 class="how-step-title">SWAP &amp; REUSE</h3>
+      <p class="how-step-body">
+        When we deliver your new order, simply leave your empty containers outside. We’ll pick them up, clean them thoroughly, and reuse them for future deliveries.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Popular produce -->
+<section class="popular">
+  <h2 class="popular-title">Popular produce</h2>
+  <div class="product-grid">
+
+    <!-- Card 1 -->
+    <article class="product-card">
+      <div class="product-media">
+        <img src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/OATS.png?raw=true" alt="Oats">
+        <button class="add-btn">
+          Add to basket
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21V3 M5 10l7-7 7 7" />
+          </svg>
+        </button>
+      </div>
+      <h3 class="product-name">Oats</h3>
+      <div class="product-info">
+        <span class="product-weight">1 kg</span>
+        <span class="product-price">48 kr / kg</span>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="product-card">
+      <div class="product-media">
+        <img src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/REDONIONS.png?raw=true" alt="Red Onions">
+        <button class="add-btn">
+          Add to basket
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21V3 M5 10l7-7 7 7" />
+          </svg>
+        </button>
+      </div>
+      <h3 class="product-name">Red Onions</h3>
+      <div class="product-info">
+        <span class="product-weight">0.5 kg</span>
+        <span class="product-price">48 kr / kg</span>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="product-card">
+      <div class="product-media">
+        <img src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/GARLIC.png?raw=true" alt="Garlic">
+        <button class="add-btn">
+          Add to basket
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21V3 M5 10l7-7 7 7" />
+          </svg>
+        </button>
+      </div>
+      <h3 class="product-name">Garlic</h3>
+      <div class="product-info">
+        <span class="product-weight">0.2 kg</span>
+        <span class="product-price">48 kr / kg</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+<section class="footer-topline">
+  <div class="footer-inner">
+    <h2 class="footer-logo">FRAM</h2>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  
+
+    <div class="footer-right">
+      <h3 class="footer-title">STAY UPDATED</h3>
+      <p class="footer-text">
+        Sign up for our newsletter to be the first to know about new produce or other exciting news!
+      </p>
+
+      <form class="footer-form">
+  <input type="text" class="footer-input" placeholder="First name">
+  <div class="footer-email-group">
+    <input type="email" class="footer-input email-input" placeholder="E-mail address">
+    <button class="footer-submit" aria-label="Submit email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+</form>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
