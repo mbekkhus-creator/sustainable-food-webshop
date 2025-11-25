@@ -1,7 +1,6 @@
 Sustainable Food Webshop
 This project is part of the Frontend Essentials final projects assigment and includes a responsive
 
-
 Current features 
 - responsive HTML and CSS
 - local images stored in /images 
