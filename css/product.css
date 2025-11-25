@@ -1,0 +1,652 @@
+/* --- HEADER --- */
+.site-header {
+  width: 100%;
+  height: 68px;
+  background: #f7f2de;
+  border-bottom: 1px solid #0b0a08;
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 45px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* --- HAMBURGER --- */
+.hamburger {
+  justify-self: start;
+  width: 24px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.hamburger:hover {
+  opacity: 0.4;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #0b0a08;
+  border-radius: 2px;
+}
+
+/* --- LOGO --- */
+.logo {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #0b0a08;
+  text-decoration: none;
+  justify-self: center;
+}
+
+/* --- HANDLEKURV --- */
+.cart-btn {
+  justify-self: end;
+  position: relative;
+  width: 47px;
+  height: 36px;
+  background: #008f51;
+  border: none;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  margin-right: 45px;
+}
+
+.cart-btn:hover {
+  opacity: 0.4;
+}
+
+.cart-btn svg {
+  display: block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #ffffff;
+  color: #008f51;
+  border-radius: 999px;
+  border: 2px solid #008f51;
+  font: 600 12px/1 "Arimo", system-ui, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* --- BODY --- */
+body {
+  max-width: 1512px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Arimo", sans-serif;
+  color: #0b0a08;
+  background-color: #f7f2de;
+}
+
+/* --- PRODUKTSIDE HEADER --- */
+.products-header {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding-left: 43px;
+  margin-top: 90px;
+}
+
+.products-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #0b0a08;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.products-description {
+  font-family: "Arimo", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #0b0a08;
+  line-height: 1.5;
+  margin: 30px 0 0 0;
+  max-width: 591px;
+}
+
+/* --- PRODUKTKORT --- */
+.product-card {
+  width: 454px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.product-media {
+  position: relative;
+  width: 454px;
+  height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* --- ADD TO BASKET KNAPP --- */
+.add-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  min-height: 38px;
+  background: #0b0a08;
+  color: #ffffff;
+  border: 0;
+  border-radius: 44px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  opacity: 0.4;
+  transform: translateY(-1px);
+}
+
+/* --- BILDE COLLAGE --- */
+.image-collage {
+  background-color: #f7f2de;
+  margin-top: 52px;
+  padding-left: 43px;
+}
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 454px);
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 52px;
+}
+
+.product-card {
+  position: relative;
+}
+
+/* Produktnavn */
+.product-name {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: #0b0a08;
+  margin: 17px 0 0 0;
+  padding-left: 24px;
+  padding-right: 17px;
+}
+
+/* Pris og vekt ligger i product-info-container */
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 17px;
+  margin-top: 12px;
+}
+
+/* Vekt */
+.product-weight {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #1b1a1ecc; /* 80% opacity */
+  margin: 0;
+}
+
+/* Pris */
+.product-price {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #0b0a08;
+  white-space: nowrap;
+  word-break: keep-all;
+  position: absolute;
+  top: calc(432px + 17px);
+  right: 24px;
+}
+
+/* --- SEE OUR PARTNERING FARMS --- */
+
+.farms {
+  background: #f7f2de;
+  border-top: 1px solid #0b0a08; 
+  margin-top: 34px;
+}
+
+.farms-inner {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 45px;
+  min-height: 658px;
+  display: flex;
+  gap: 85px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Venstre kolonne – 507px bred */
+.farms-left {
+  width: 507px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.farms-title {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  text-align: center;
+  color: #0b0a08;
+  margin: 0;
+  max-width: 377px;
+}
+
+/* Høyre kolonne – kart */
+.farms-map-col {
+  flex: 1;
+  border-left: 1px solid #0b0a08;
+  padding-left: 90px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Selve kartboksen */
+.farms-map {
+  width: 745px;
+  height: 478px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Iframe inni kartet – følger boksen, ikke større */
+.farms-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+/* TOPPLINJE FOOTER */
+.footer-topline {
+  background: #dc4131;
+  height: 113px;
+  position: relative;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.footer-topline .footer-logo {
+  position: absolute;
+  left: 45px;
+  top: 41px;
+  width: 122px;
+  height: 62px; 
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* HVIT LINJE I FOOTER */
+.footer-topline::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #fff;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #dc4131;
+  color: #fff;
+  padding: 63px 43px 80px;
+}
+
+.footer-inner {
+  max-width: 1512px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-right {
+  margin-left: 14px;
+}
+
+.footer-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.footer-text {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 20px;
+  margin: 0 0 70px 0; 
+  max-width: 300px;
+}
+
+/* SKJEMA */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-input {
+  width: 460px;
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+}
+
+.footer-email-group {
+  position: relative;
+  width: 460px;
+  height: 44px;
+}
+
+.email-input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-family: "Arimo", sans-serif;
+  font-size: 16px;
+}
+
+.footer-submit {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-20%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* SORT PIL */
+.footer-submit svg {
+  width: 24px;
+  height: 24px;
+  stroke: #0b0a08; 
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-submit:hover svg {
+  opacity: 0.6;
+  transform: translateX(2px); 
+}
+
+
+/* 💻 MELLOMSTORE SKJERMER – PRODUKTER (769–1400px) */
+@media (max-width: 1400px) and (min-width: 769px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 52px;
+    row-gap: 52px;
+    justify-content: center;
+  }
+
+  .product-card,
+  .product-media {
+    width: 100%;
+    max-width: 454px;
+  }
+}
+
+/* 💻 MELLOMSTORE SKJERMER – FARMS (769–1200px) */
+@media (max-width: 1200px) and (min-width: 769px) {
+
+  .farms-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 45px;
+    min-height: auto;
+  }
+
+  .farms-left {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .farms-map-col {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .farms-map {
+    width: 100%;
+    max-width: 745px;
+  }
+}
+
+
+/* 📱 MOBILVERSJON */
+@media (max-width: 768px) {
+  /* HEADER */
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .cart-btn {
+    margin-right: 16px;
+  }
+
+  /* PRODUCE SECTION */
+  .products-header {
+    padding-left: 21px;
+    padding-right: 21px;
+    margin-top: 60px;
+  }
+
+  .products-title {
+    padding-left: 29px;
+    font-size: 24px;
+    margin-top: 90px;
+  }
+
+  .products-description {
+    padding-left: 29px;
+    font-size: 18px;
+  }
+
+  /* PRODUKT "KORT" MED BILDER */
+  .image-collage {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+
+  .collage-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 40px;
+  }
+
+  .product-card,
+  .product-media {
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto;
+  }
+
+  .product-media {
+    height: 279px;
+    font-size: 24px;
+  }
+
+  .product-price {
+    top: calc(279px + 17px);
+    right: 21px;
+    font-size: 24px;
+  }
+  
+  /* --- PARTNERING FARMS – MOBIL --- */
+
+  .farms-inner {
+    flex-direction: column;
+    padding: 0;   
+    gap: 0;
+    min-height: auto;
+  }
+
+  .farms {
+    border-top: none;
+  }
+
+  .farms-left {
+    width: 100%;
+    border-top: 1px solid #0B0A08;
+    border-bottom: 1px solid #0B0A08;
+    padding: 45px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .farms-title {
+    text-align: center;
+    font-size: 24px; 
+    max-width: 304px;
+  }
+
+  .farms-map-col {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    display: block;
+  }
+
+  .farms-map {
+    width: 340px;
+    height: 459px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .farms-map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding-left: 29px;
+    padding-right: 21px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .footer-topline::after {
+    margin-left: -14px;
+    margin-right: 15px;
+  }
+
+  .footer-title {
+    font-family: "Arimo", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 63px;
+  }
+
+  .footer-text {
+    font-family: "Frank Ruhl Libre", serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 44px;
+    max-width: 279px;
+  }
+
+  .footer-form {
+    width: 329px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+    padding-left: 3px;
+    gap: 16px; 
+  }
+
+  .footer-input,
+  .footer-email-group {
+    width: 329px;
+  }
+}
+
