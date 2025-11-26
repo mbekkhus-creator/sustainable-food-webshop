@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRAM - Sustainable Food Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Frank+Ruhl+Libre:wght@300&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
+      <a class="logo" href="#">FRAM</a>
+    </div>
+
+    <button class="cart-btn" aria-label="Handlekurv">
+      <!-- handlekurv-ikon -->
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b0a08" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+
+      <!-- tall (badge) til handlekurv-->
+      <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+    </button>
+  </header>
+   
+  <!-- CHATBOT SECTION -->
+  <div class="chatbot-header-bg"></div>
+
+  <div class="chatbot-wrapper">
+    <div class="chatbot-box">
+
+      <div class="chatbot-messages" id="chatbot-messages">
+
+        <!-- BOT-SVAR MED FRAM SOM LABEL UTENFOR BOBLA (beholdt) -->
+        <div class="chatbot-row bot-row">
+          <span class="chatbot-sender-label">FRAM</span>
+          <div class="chatbot-message bot">
+            <p>What can I help you with today? </p>
+          </div>
+        </div>
+
+        <!-- (den statiske brukermeldingen er fjernet) -->
+
+      </div>
+
+      <!-- INPUT-BOBLE + SEND-KNAPP MED PIL/X -->
+      <div class="chatbot-input-row">
+        <div class="chatbot-message user chatbot-input-bubble">
+          <textarea
+            id="chat-input"
+            placeholder="Ask FRAM anything.."
+          ></textarea>
+        </div>
+
+        <button class="chatbot-send" id="chat-send-btn" aria-label="Send message">
+          <span class="icon-arrow" aria-hidden="true">
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <!-- linjen -->
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <!-- pilspissen -->
+              <polyline points="6 10 12 4 18 10" />
+            </svg>
+          </span>
+          <span class="icon-x" aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
