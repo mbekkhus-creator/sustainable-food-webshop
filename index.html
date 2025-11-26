@@ -6,29 +6,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRAM – Local Farms Delivery</title>
+  <title>FRAM - Local Farms Delivery</title>
 </head>
 
 <body>
-
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header / Nav FRA LS, denne ligger midlertid for visuelt -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <button class="icon-btn" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">☰</button>
-      <div class="logo">FRAM</div>
-      <button class="icon-indicator" aria-label="Status indicator"></button>
+  <!-- Header / Nav FRA LS -->
+   <header class="site-header">
+    <div class="header-inner">
+      <button class="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
+      <a class="logo" href="index.html">FRAM</a>
     </div>
+
+    <button class="cart-btn" aria-label="Handlekurv">
+      <!-- handlekurv-ikon -->
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b0a08" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="20" cy="21" r="1" />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+
+      <!-- tall (badge) til handlekurv-->
+      <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+    </button>
   </header>
 
   <!-- Drawer -->
   <aside id="drawer" class="drawer" hidden>
     <button class="drawer-close" aria-label="Close menu">×</button>
     <nav class="drawer-nav">
-      <a href="#products">Products</a>
-      <a href="#chat">Chat</a>
-      <a href="#checkout">Checkout</a>
+      <a href="products.html">Products</a>
+      <a href="chatbot.html">Chat</a>
+      <a href="checkout">Checkout</a>
     </nav>
   </aside>
 
@@ -37,7 +47,7 @@
     <img class="hero-img" src="https://github.com/mbekkhus-creator/sustainable-food-webshop/blob/main/images/headerImage.png?raw=true" alt="Green mountains and sky" />
     <div class="hero-overlay">
       <h1 class="hero-title">FRAM</h1>
-      <p class="hero-sub">HOME DELIVERY FROM <br>YOUR LOCAL FARMS</p>
+      <p class="hero-sub">HOME DELIVERY FROM YOUR LOCAL FARMS</p>
     </div>
   </section>
 
@@ -46,7 +56,7 @@
     <!-- Two cards: Seasonal + Chat -->
 <section class="container cards-2">
   <article class="card">
-    <h2 class="subheader">SHOP OUR SEASONAL SELECTION</h2>
+    <h2 class="subheader">SHOP OUR SEASONAL <br>SELECTION</h2>
     <p class="accent">Updated every week</p>
 
     <img
@@ -78,12 +88,11 @@
   </article>
 </section>
 
-
     <!-- How it works -->
     <section class="how">
   <div class="how-left">
    <h2 class="how-title">
-  THIS IS HOW IT<br class="mobile-br"> WORKS
+  THIS IS HOW IT<br> WORKS
 </h2>
   </div>
 
@@ -93,7 +102,7 @@
       <p class="how-step-body">
          Fram is a circular service that ensures your kitchen is always stocked with the essentials you need.
     Browse our seasonal selection, choose your items, and place your order online.<br><br>
-    <a href="#">See our stock here</a>
+    <a href="products.html">See our stock here</a>
       </p>
     </div>
 
@@ -179,10 +188,8 @@
         <span class="product-price">48 kr / kg</span>
       </div>
     </article>
-
   </div>
 </section>
-
   </main>
 
   <!-- Footer -->
@@ -192,10 +199,8 @@
   </div>
 </section>
 
-
 <footer class="site-footer">
-  
-
+  <div class="footer-inner">
     <div class="footer-right">
       <h3 class="footer-title">STAY UPDATED</h3>
       <p class="footer-text">
@@ -203,19 +208,23 @@
       </p>
 
       <form class="footer-form">
-  <input type="text" class="footer-input" placeholder="First name">
-  <div class="footer-email-group">
-    <input type="email" class="footer-input email-input" placeholder="E-mail address">
-    <button class="footer-submit" aria-label="Submit email">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M13 5l7 7-7 7"/>
-      </svg>
-    </button>
-  </div>
-</form>
+        <input type="text" class="footer-input" placeholder="First name">
+        <div class="footer-email-group">
+          <input type="email" class="footer-input email-input" placeholder="E-mail address">
+          <button class="footer-submit" aria-label="Submit email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </footer>
+<script src="js/main.js"></script>
 </body>
-
 </html>
+
+
+
+
