@@ -46,6 +46,92 @@
   border-radius: 2px;
 }
 
+/* Popup-container */
+.menu-overlay {
+  position: fixed;
+  top: 22px;                 /* start helt fra toppen */
+  left: calc(50% - 756px + 45px);
+  
+  width: 390px;
+  height: 844px;
+
+  background: #008f51;
+  color: #0b0a08;
+  border-radius: 0 0 12px 12px;  /* topp flat, bunnen rund */
+  
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+}
+
+.menu-overlay.open {
+  display: block;
+}
+
+/* X-knapp */
+.menu-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  color: #0b0a08;
+}
+
+/* Innhold */
+.menu-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topplinje */
+.menu-bar {
+  height: 68px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: 1px solid #0b0a08;
+}
+
+.menu-logo {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 32px;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+/* Lenker */
+.menu-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 73px;
+}
+
+.menu-nav a,
+.menu-footer a {
+  font-family: "Arimo", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0b0a08;
+}
+
+/* Checkout nederst */
+.menu-footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
+
 /* --- LOGO --- */
 .logo {
   font-family: "Frank Ruhl Libre", serif;
@@ -193,15 +279,16 @@ body {
 .image-collage {
   background-color: #f7f2de;
   margin-top: 52px;
-  padding-left: 43px;
+  padding: 0 43px;
 }
 
 .collage-grid {
   display: grid;
-  grid-template-columns: repeat(3, 454px);
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
   align-items: start;
-  row-gap: 52px;
+  column-gap: 29px;
+  row-gap: 29px;
 }
 
 .product-card {
@@ -504,6 +591,34 @@ body {
   .cart-btn {
     margin-right: 16px;
   }
+  
+  /* MOBILVERSJON AV POPUP-MENYEN */
+@media (max-width: 480px) {
+  .menu-overlay {
+    top: 0;
+    left: 0;              /* start helt fra venstre på mobil */
+    width: 100%;          /* fyll hele bredden */
+    height: 100vh;        /* fyll hele høyden på skjermen */
+    max-width: none;      /* ikke lås til 390 på mobil */
+    border-radius: 0;     /* kant i kant med skjermen */
+    box-shadow: none;     /* valgfritt – ser mer “app” ut */
+  }
+
+  .menu-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-nav {
+    gap: 32px;            /* litt strammere mellom lenker */
+  }
+
+  .menu-nav a,
+  .menu-footer a {
+    font-size: 20px;      /* litt mindre tekst på mobil */
+  }
+}
+
 
   /* PRODUCE SECTION */
   .products-header {
@@ -649,4 +764,5 @@ body {
     width: 329px;
   }
 }
+
 
