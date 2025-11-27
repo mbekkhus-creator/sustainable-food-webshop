@@ -23,6 +23,7 @@ const hamburger = document.querySelector('.hamburger');
   });
 
 
+
 // Finn handlekurv-teller
 const cartCountEl = document.getElementById('cart-count');
 let cartCount = 0;

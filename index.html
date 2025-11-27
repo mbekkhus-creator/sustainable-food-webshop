@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <title>FRAM - Local Farms Delivery</title>
 </head>
 
@@ -15,7 +16,10 @@
   <!-- Header / Nav FRA LS -->
    <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Åpne meny">
+        <span></span><span></span><span></span>
+      </button>
+
       <a class="logo" href="index.html">FRAM</a>
     </div>
 
@@ -32,15 +36,29 @@
     </button>
   </header>
 
-  <!-- Drawer -->
-  <aside id="drawer" class="drawer" hidden>
-    <button class="drawer-close" aria-label="Close menu">×</button>
-    <nav class="drawer-nav">
-      <a href="products.html">Products</a>
-      <a href="chatbot.html">Chat</a>
-      <a href="checkout">Checkout</a>
+   <!-- POPUP-MENY -->
+<div class="menu-overlay" id="mobileMenu" aria-hidden="true">
+  <button class="menu-close" aria-label="Close menu">&times;</button>
+
+  <div class="menu-inner">
+    <!-- Topp-linje med FRAM -->
+    <div class="menu-bar">
+      <span class="menu-logo">FRAM</span>
+    </div>
+
+    <!-- Sentrerte lenker -->
+    <nav class="menu-nav">
+      <a href="index.html">HOME</a>
+      <a href="products.html">PRODUCTS</a>
+      <a href="chatbot.html">CHAT</a>
     </nav>
-  </aside>
+
+    <!-- Checkout nederst -->
+    <div class="menu-footer">
+      <a href="checkout.html">CHECKOUT</a>
+    </div>
+  </div>
+</div>
 
   <!-- Hero -->
   <section class="hero" role="banner">

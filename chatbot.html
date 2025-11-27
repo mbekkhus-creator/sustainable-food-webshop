@@ -12,10 +12,13 @@
 </head>
   
 <body>
-  <header class="site-header">
+   <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
-      <a class="logo" href="#">FRAM</a>
+      <button class="hamburger" aria-label="Åpne meny">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="logo" href="index.html">FRAM</a>
     </div>
 
     <button class="cart-btn" aria-label="Handlekurv">
@@ -30,6 +33,31 @@
       <span class="cart-count" id="cart-count" aria-live="polite">0</span>
     </button>
   </header>
+
+   <!-- POPUP-MENY -->
+<div class="menu-overlay" id="mobileMenu" aria-hidden="true">
+  <button class="menu-close" aria-label="Close menu">&times;</button>
+
+  <div class="menu-inner">
+    <!-- Topp-linje med FRAM -->
+    <div class="menu-bar">
+      <span class="menu-logo">FRAM</span>
+    </div>
+
+    <!-- Sentrerte lenker -->
+    <nav class="menu-nav">
+      <a href="index.html">HOME</a>
+      <a href="products.html">PRODUCTS</a>
+      <a href="chatbot.html">CHAT</a>
+    </nav>
+
+    <!-- Checkout nederst -->
+    <div class="menu-footer">
+      <a href="checkout.html">CHECKOUT</a>
+    </div>
+  </div>
+</div>
+
    
   <!-- CHATBOT SECTION -->
   <div class="chatbot-header-bg"></div>
@@ -85,6 +113,8 @@
     </div>
   </div>
 
-  <script src="js/script.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+<script src="js/chatbot.js"></script>
 </body>
 </html>
