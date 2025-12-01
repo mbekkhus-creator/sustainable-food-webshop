@@ -112,7 +112,7 @@ a {
 .menu-overlay {
   position: fixed;
   top: 0;                 /* start helt fra toppen */
-  left: calc(50% - 756px);
+  left: 0;
   
   width: 390px;
   height: 844px;
@@ -777,6 +777,14 @@ a {
   .cart-btn {
     margin-right: 16px;
   }
+
+  .menu-overlay {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
 
   /* ---- HERO – MOBILE ---- */
 
