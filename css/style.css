@@ -19,10 +19,13 @@
 }
 
 body {
+  width: 100%;
   margin: 0;
+  padding: 0;
   background-color: var(--bg-primary);
   font-family: "Arimo", sans-serif;
   color: var(--text-dark);
+  max-width: none;
 }
 
 img {
@@ -35,7 +38,6 @@ a {
   text-decoration: none;
 }
 
-/* Skip-link */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -56,18 +58,18 @@ a {
   margin: 0 auto;
 }
 
-/* ========================================
+/* ----------------------------------------
    1. HEADER / NAV
-   ======================================== */
+   ---------------------------------------- */
 
 .site-header {
-  max-width: 1512px;
+  width: 100%;
   height: 68px;
   background: #f7f2de;
   border-bottom: 1px solid #0b0a08;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .header-inner {
@@ -80,7 +82,6 @@ a {
   align-items: center;
 }
 
-/* --- HAMBURGER --- */
 .hamburger {
   justify-self: start;
   width: 24px;
@@ -108,19 +109,15 @@ a {
   border-radius: 2px;
 }
 
-/* Popup-container */
 .menu-overlay {
   position: fixed;
-  top: 0;                 /* start helt fra toppen */
+  top: 0;                
   left: 0;
-  
   width: 390px;
   height: 844px;
-
   background: #008f51;
   color: #0b0a08;
-  border-radius: 0 0 12px 12px;  /* topp flat, bunnen rund */
-  
+  border-radius: 0 0 12px 12px;  
   display: none;
   z-index: 9999;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
@@ -130,7 +127,6 @@ a {
   display: block;
 }
 
-/* X-knapp */
 .menu-close {
   position: absolute;
   top: 16px;
@@ -143,7 +139,6 @@ a {
   color: #0b0a08;
 }
 
-/* Innhold */
 .menu-inner {
   width: 100%;
   height: 100%;
@@ -151,7 +146,6 @@ a {
   flex-direction: column;
 }
 
-/* Topplinje */
 .menu-bar {
   height: 68px;
   display: flex;
@@ -160,7 +154,6 @@ a {
   border-bottom: 1px solid #0b0a08;
 }
 
-/* Lenker */
 .menu-nav {
   flex: 1;
   display: flex;
@@ -187,14 +180,12 @@ a {
   color: #0b0a08;
 }
 
-/* Checkout nederst */
 .menu-footer {
   display: flex;
   justify-content: center;
   padding-bottom: 32px;
 }
 
-/* --- LOGO --- */
 .logo {
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 300;
@@ -206,7 +197,7 @@ a {
   justify-self: center;
 }
 
-/* --- HANDLEKURV --- */
+/* --- CART --- */
 .cart-btn {
   justify-self: end;
   position: relative;
@@ -248,7 +239,6 @@ a {
   justify-content: center;
   box-sizing: border-box;
 }
-
 
 
 /* ========================================
@@ -335,7 +325,6 @@ a {
   transform: translateX(-0.5px);
 }
 
-/* individual card */
 .card {
   background: var(--bg-white);
   padding: 32px 45px 56px;
@@ -509,15 +498,6 @@ a {
   box-sizing: border-box;
 }
 
-.popular-title {
-  font-family: "Arimo", sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin: 0 0 45px 0;
-}
-
-/* tre kort på rad */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -527,7 +507,6 @@ a {
 
 /* Produktkort – matcher LS sin stil */
 .product-card {
-  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -536,7 +515,45 @@ a {
   width: 100%;
 }
 
-/* Bildeboksen – desktop: 454 x 432 */
+.popular-title {
+  font-family: "Arimo", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 45px 0;
+}
+
+.product-name {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: #0b0a08;
+  margin: 17px 0 0 0;
+  padding-left: 24px;
+  padding-right: 17px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 17px;
+  margin-top: 12px;
+}
+
+/* Vekt – desktop */
+.product-weight {
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+  color: #1b1a1ecc;
+  margin: 0;
+}
+
 .product-media {
   position: relative;
   width: 100%;
@@ -552,7 +569,7 @@ a {
   border-radius: 16px;
 }
 
-/* ADD TO BASKET-knapp */
+/* ADD TO BASKET-btn */
 .add-btn {
   position: absolute;
   right: 16px;
@@ -577,40 +594,6 @@ a {
   transform: translateY(-1px);
 }
 
-/* Produktnavn – desktop */
-.product-name {
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1;
-  color: #0b0a08;
-  margin: 17px 0 0 0;
-  padding-left: 24px;
-  padding-right: 17px;
-}
-
-/* Info-linje – desktop: vekt + pris */
-.product-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-  padding-left: 24px;
-  padding-right: 17px;
-  margin-top: 12px;
-}
-
-/* Vekt – desktop */
-.product-weight {
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1;
-  color: #1b1a1ecc;
-  margin: 0;
-}
-
-/* Pris – desktop: absolutt posisjon under navnet */
 .product-price {
   font-family: "Arimo", sans-serif;
   font-weight: 400;
@@ -629,7 +612,6 @@ a {
    7. FOOTER – DESKTOP
    ======================================== */
 
-/* 7.1 Top line */
 .footer-topline {
   background: #dc4131;
   height: 113px;
@@ -663,8 +645,6 @@ a {
   background: #fff;
 }
 
-
-/* 7.2 Main layout */
 .site-footer {
   max-width: 1512px;
   margin: 0 auto;
@@ -700,8 +680,6 @@ a {
   max-width: 300px;
 }
 
-
-/* 7.3 Form elements */
 .footer-form {
   display: flex;
   flex-direction: column;
@@ -738,7 +716,7 @@ a {
 
 .footer-submit {
   position: absolute;
-  right: 12px;   /* pil inni feltet */
+  right: 12px;  
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -854,11 +832,11 @@ a {
   .card:first-child {
     border-bottom: 1px solid #000000;
     padding-bottom: 90px;
-    margin-bottom: 58px;     /* for en total på 90 som figma */
+    margin-bottom: 58px;     
   }
 
   .card {
-    min-height: auto;   /* gir ca 1450px total seksjonshøyde */
+    min-height: auto;   
     padding: 32px 16px 40px;
   }
 
@@ -912,7 +890,6 @@ a {
     background: var(--bg-primary);
   }
 
-  /* overskrift-blokken */
   .how-left {
     width: 100%;
     margin: 0;
@@ -937,7 +914,6 @@ a {
     margin-top: 24px;
   }
 
-  /* hvert step – linjer går helt ut, innhold har padding */
   .how-step {
     display: flex;
     flex-direction: column;
@@ -949,7 +925,7 @@ a {
   }
 
   .how-step:last-child {
-    padding-bottom: 45px;   /* juster til 20/18 hvis du vil ha den enda tightere */
+    padding-bottom: 45px; 
   }
 
   .how-step-title {
@@ -974,7 +950,7 @@ a {
   }
 
   .popular-title {
-    margin-top: 16px;   /* litt luft over teksten */
+    margin-top: 16px;  
   }
 
   /* horisontal scroll */
@@ -988,7 +964,6 @@ a {
     -webkit-overflow-scrolling: touch;
   }
 
-  /* hvert kort: 250px bredde */
   .product-card {
     flex: 0 0 250px;
     width: 250px;
@@ -996,7 +971,6 @@ a {
     scroll-snap-align: center;
   }
 
-  /* bilde 250 x 321 på mobil */
   .product-media {
     width: 250px;
     height: 321px;
@@ -1011,7 +985,6 @@ a {
     border-radius: 16px;
   }
 
-  /* NAVN (Oats / Red Onions ...) – under bildet */
   .product-name {
     font-family: "Arimo", sans-serif;
     font-weight: 400;
@@ -1022,7 +995,6 @@ a {
     padding-right: 0;
   }
 
-  /* Container for vekt/pris – vi bruker bare vekt i flow, pris absolutt */
   .product-info {
     display: block;
     padding-left: 0;
@@ -1030,7 +1002,6 @@ a {
     margin-top: 8px;
   }
 
-  /* 1 kg under navnet */
   .product-weight {
     font-family: "Arimo", sans-serif;
     font-weight: 400;
@@ -1040,10 +1011,9 @@ a {
     margin: 0;
   }
 
-  /* 48 kr / kg – samme linje som navnet (Oats), helt til høyre */
   .product-price {
     position: absolute;
-    top: calc(321px + 16px);  /* 321 bilde + 16 margin-top på navnet */
+    top: calc(321px + 16px); 
     right: 0;
     font-family: "Arimo", sans-serif;
     font-weight: 400;
@@ -1095,18 +1065,19 @@ a {
 }
 
 /* ========================================
-   MELLOMSTORE SKJERMER – 789PX–1400PX
+   MELLOMSTORE SKJERMER – 769PX–1400PX
    ======================================== */
-@media (min-width: 789px) and (max-width: 1400px) {
+   
+@media (min-width: 769px) and (max-width: 1400px) {
 
   /* ---- HERO – MEDIUM ---- */
 
   .hero-img {
-    height: 650px;           /* litt lavere enn 850 */
+    height: 650px;          
   }
 
   .hero-title {
-    font-size: 140px;        /* ned fra 200px */
+    font-size: 140px;      
   }
 
   .hero-title::after {
@@ -1275,15 +1246,15 @@ a {
   /* 2 kort på første rad, siste under */
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 29px;
-    row-gap: 48px;
-    overflow: visible;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 52px;
+    row-gap: 52px;
+    justify-content: center;
   }
 
   .product-card {
-    max-width: 454px;
     width: 100%;
+    max-width: 454px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1292,7 +1263,7 @@ a {
 
   .product-media {
     width: 100%;
-    height: auto;
+    height: 432px;
     aspect-ratio: 454 / 432;
     border-radius: 16px;
     overflow: hidden;
@@ -1315,6 +1286,7 @@ a {
     padding-left: 0;
     padding-right: 0;
     margin-top: 12px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -1326,18 +1298,16 @@ a {
     white-space: nowrap; /* HAR LAGT INN HELE DENNE BOLKEN LS */
   }
 
-  .product-price {
+  .product-price{
     position: static;
     top: auto;
     right: auto;
     white-space: nowrap; 
+    margin: 0;
+    white-space: nowrap;
   }
-}
-
 
 /* FOOTER – MEDIUM */
-@media (min-width: 789px) and (max-width: 1024px) {
-
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -1352,6 +1322,5 @@ a {
     margin-top: 24px;
   }
 }
-
 
 
