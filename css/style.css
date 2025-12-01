@@ -1318,13 +1318,19 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: nowrap; /*DENNE HAR JEG ENDRET PÅ LS*/
+  }
+
+   .product-weight,
+  .product-price {
+    white-space: nowrap; /* HAR LAGT INN HELE DENNE BOLKEN LS */
   }
 
   .product-price {
     position: static;
     top: auto;
     right: auto;
-    white-space: nowrap;
+    white-space: nowrap; 
   }
 }
 
