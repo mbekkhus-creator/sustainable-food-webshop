@@ -49,8 +49,8 @@
 /* Popup-container */
 .menu-overlay {
   position: fixed;
-  top: 22px;                 /* start helt fra toppen */
-  left: calc(50% - 756px + 45px);
+  top: 0px;                 /* start helt fra toppen */
+  left: calc(50% - 756px);
   
   width: 390px;
   height: 844px;
@@ -72,7 +72,7 @@
 .menu-close {
   position: absolute;
   top: 16px;
-  left: 16px;
+  left: 32px;
   background: transparent;
   border: none;
   font-size: 32px;
@@ -762,6 +762,23 @@ body {
   .footer-input,
   .footer-email-group {
     width: 329px;
+  }
+}
+
+/* 2️⃣ VANLIG DESKTOP – 769–1512px */
+@media (max-width: 1512px) and (min-width: 769px) {
+  .menu-overlay {
+    left: 0;   /* legg popupen 45px inn fra skjermkanten */
+  }
+}
+  
+/* 3️⃣ MOBIL – under 768px */
+@media (max-width: 768px) {
+  .menu-overlay {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
   }
 }
 
