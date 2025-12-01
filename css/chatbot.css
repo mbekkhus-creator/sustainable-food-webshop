@@ -1,12 +1,16 @@
+/* ---------------------------------------------------
+   HEADER + NAV
+------------------------------------------------------ */
+
 /* --- HEADER --- */
 .site-header {
-  max-width: 1512px;
+  width: 100%;          
   height: 68px;
   background: #f7f2de;
   border-bottom: 1px solid #0b0a08;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 0;            
 }
 
 .header-inner {
@@ -19,7 +23,7 @@
   align-items: center;
 }
 
-/* --- HAMBURGER --- */
+/* --- HAMBURGER MENU --- */
 .hamburger {
   justify-self: start;
   width: 24px;
@@ -47,18 +51,18 @@
   border-radius: 2px;
 }
 
-/* Popup-container */
+/* --- POP-UP MENU --- */
 .menu-overlay {
   position: fixed;
-  top: 0;                 /* start helt fra toppen */
-  left: calc(50% - 756px);
+  top: 0;                 
+  left: 0;
   
   width: 390px;
   height: 844px;
 
   background: #008f51;
   color: #0b0a08;
-  border-radius: 0 0 12px 12px;  /* topp flat, bunnen rund */
+  border-radius: 0 0 12px 12px;  
   
   display: none;
   z-index: 9999;
@@ -69,11 +73,6 @@
   display: block;
 }
 
-  .menu-overlay {
-    left: 0; 
-  }
-
-/* X-knapp */
 .menu-close {
   position: absolute;
   top: 16px;
@@ -86,7 +85,6 @@
   color: #0b0a08;
 }
 
-/* Innhold */
 .menu-inner {
   width: 100%;
   height: 100%;
@@ -94,7 +92,6 @@
   flex-direction: column;
 }
 
-/* Topplinje */
 .menu-bar {
   height: 68px;
   display: flex;
@@ -103,7 +100,6 @@
   border-bottom: 1px solid #0b0a08;
 }
 
-/* Lenker */
 .menu-nav {
   flex: 1;
   display: flex;
@@ -130,13 +126,11 @@
   color: #0b0a08;
 }
 
-/* Checkout nederst */
 .menu-footer {
   display: flex;
   justify-content: center;
   padding-bottom: 32px;
 }
-
 
 /* --- LOGO --- */
 .logo {
@@ -150,7 +144,7 @@
   justify-self: center;
 }
 
-/* --- HANDLEKURV --- */
+/* --- CART --- */
 .cart-btn {
   justify-self: end;
   position: relative;
@@ -194,30 +188,31 @@
 }
 
 /* --- BODY --- */
-body {
-  max-width: 1512px;
-  width: 100%;          /* 👈 lagt til for bedre responsivitet */
-  margin: 0 auto;
-  padding: 0;
-  font-family: "Arimo", sans-serif;
-  color: #0b0a08;
-  background-color: #f7f2de;
+body { 
+  width: 100%; 
+  margin: 0; 
+  padding: 0; 
+  font-family: "Arimo", sans-serif; 
+  color: #0b0a08; 
+  background-color: #f7f2de; 
+  max-width: none;  
 }
 
-/* --- CHATBOT HEADER IMAGE --- */
+/* ---------------------------------------------------
+   CHATBOT
+------------------------------------------------------ */
+
 .chatbot-header-bg {
   width: 100%;
-  max-width: 1512px;
-  height: 928px;  /* riktig høyde på bildet */
+  max-width: none;        
+  height: 928px;
   background-image: url("https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/HeaderImage.jpg?raw=true");
   background-size: cover;
   background-position: center;
-
-  margin: 0 auto;
+  margin: 0;            
   position: relative;
 }
 
-/* --- CHATBOT WRAPPER --- */
 .chatbot-wrapper {
   position: absolute;
   top: 72px;
@@ -228,7 +223,6 @@ body {
   width: 100%;
 }
 
-/* --- CHATBOT BOKS --- */
 .chatbot-box {
   width: 508px;
   height: 716px;
@@ -237,15 +231,13 @@ body {
   border-radius: 24px;
   padding: 40px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-
-  /* viktig for layouten */
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
 }
 
-/* --- MELDINGER (bobler) --- */
+/* --- MESSAGE BUBBLES --- */
 .chatbot-message {
   max-width: 411px;
   border-radius: 18px;
@@ -257,21 +249,17 @@ body {
   word-break: break-word;
 }
 
-/* Container for alle meldinger inni den hvite boksen */
 .chatbot-messages {
-  flex: 1 1 auto;            /* fyller alt mellom header-meldingene og inputfeltet */
-  min-height: 0;             /* VIKTIG sammen med flex + overflow */
-  max-height: 100%;          /* sikkerhetsnett */
-
-  overflow-y: auto;          /* her får du scrollen */
+  flex: 1 1 auto;            
+  min-height: 0;         
+  max-height: 100%;         
+  overflow-y: auto;          
   padding-right: 8px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 38px;
 }
-
 
 .chatbot-message p {
   margin: 0;
@@ -280,35 +268,34 @@ body {
 
 .chatbot-message.bot {
   max-width: 249px;
-  background: #f6f2d8; /* creme boble*/
+  background: #f6f2d8; 
 }
 
 .chatbot-message.user {
-  max-width: 411px;
-  background: #d2e8f9; /* blå boble */
-  align-self: flex-end;   /* hvis du vil ha den til høyre */
+  max-width: 353px;
+  background: #d2e8f9;
+  align-self: auto;           
 }
 
-/* Hver melding-rad (FRAM + boble / brukerboble) */
 .chatbot-row {
   display: flex;
-  gap: 12px;               /* avstand mellom FRAM og bobla */
+  gap: 12px;              
   align-items: flex-start;
 }
 
-/* Bot-rad: FRAM til venstre, boble til høyre */
 .bot-row {
-  flex-direction: row;      /* ← viktig: side-ved-side */
+  flex-direction: row;      
   align-items: flex-start;
 }
 
-/* Bruker-rad: bare boble, kan stå som den er */
 .user-row {
-  flex-direction: row;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: flex-end;  
+  width: 100%;                
+  padding-left: 62px;         
+  box-sizing: border-box;
 }
 
-/* Rad nederst med input-boble + knapp */
 .chatbot-input-row {
   position: static;
   display: flex;
@@ -318,33 +305,30 @@ body {
 
 }
 
-/* Brukerens input-boble (blå) nederst */
 .chatbot-input-bubble {
   flex: 1;
-  background: #d2e8f9; /* samme blå som user-boblen */
+  background: #d2e8f9; 
   padding: 10px 10px;
 }
 
-/* Selve tekstfeltet inni bobla */
 .chatbot-input-bubble textarea {
   width: 100%;
   border: none;
   background: transparent;
-  resize: none;    /* bruker selvkontroll, ikke manuell resizing */
+  resize: none;   
   outline: none;
   font-family: "Elza Text", sans-serif;
   font-size: 16px;
   line-height: 1.2;
-  overflow: hidden; /* 👈 viktig */
+  overflow: hidden; 
   margin: 10px 10px;
 }
 
-/* Vi lar send-knappen være i samme stil, men posisjoneres av .chatbot-input-row */
 .chatbot-input-row .chatbot-send {
   position: static;
 }
 
-/* Ikon-toggling i knappen */
+/* --- SEND BUTTON --- */
 .chatbot-send .icon-x {
   display: none;
   font-size: 18px;
@@ -359,7 +343,7 @@ body {
   display: inline;
 }
 
-/* Typing-boble med tre prikker */
+/* --- TYPING BUBBLE --- */
 .typing-row .typing-bubble {
   display: inline-flex;
   align-items: center;
@@ -388,15 +372,14 @@ body {
   50% { opacity: 1; }
 }
 
-
-/* FRAM-label */
+/* --- FRAM-LABEL --- */
 .chatbot-sender-label {
   font-family: "Frank Ruhl Libre", serif;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #0b0a08;
-  align-self: center;         /* så teksten flukter litt med toppen av bobla */
+  align-self: center;         
 }
 
 .chatbot-send {
@@ -424,11 +407,14 @@ body {
 }
 
 .chatbot-send svg {
-  height: 16px;   /* ← du ønsket 16px høy pil */
+  height: 16px;   
   width: auto;
 }
 
-/* --- MOBILJUSTERT CHATBOT + HEADER --- */
+/* ---------------------------------------------------
+   MOBILE
+------------------------------------------------------ */
+
 @media (max-width: 768px) {
 
   .header-inner {
@@ -469,19 +455,12 @@ body {
   }
 }
 
-/* 2️⃣ VANLIG DESKTOP – 769–1512px */
+/* ---------------------------------------------------
+   DESKTOP
+------------------------------------------------------ */
+
 @media (max-width: 1512px) and (min-width: 769px) {
   .menu-overlay {
     left: 0;   
-  }
-}
-  
-/* 3️⃣ MOBIL – under 768px */
-@media (max-width: 768px) {
-  .menu-overlay {
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    border-radius: 0;
   }
 }
