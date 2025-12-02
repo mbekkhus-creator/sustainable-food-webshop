@@ -45,3 +45,34 @@ addButtons.forEach((btn) => {
   });
 });
 
+// Newsletter popup /* DENNE ER NY */
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.footer-form');
+  const popup = document.getElementById('newsletterPopup');
+  const closeBtn = popup.querySelector('.newsletter-popup-close');
+
+  if (!form || !popup || !closeBtn) return;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // hindrer reload
+
+    // Vis popup
+    popup.classList.add('is-visible');
+
+    // Tøm feltene
+    form.reset();
+  });
+
+  // Lukk på knapp
+  closeBtn.addEventListener('click', function () {
+    popup.classList.remove('is-visible');
+  });
+
+  // Lukk med Escape (valgfritt men digg)
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      popup.classList.remove('is-visible');
+    }
+  });
+});
+/* DENNE ER NY */

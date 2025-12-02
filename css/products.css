@@ -536,6 +536,71 @@ body {
   transform: translateX(2px); 
 }
 
+/* Popup container */ /* DENNE ER NY */
+.newsletter-popup {
+  position: fixed;
+  left: 50%;
+  bottom: 300px; 
+  transform: translateX(-50%);
+
+  background: #F7F2DE; 
+  border: 1px solid #E1EAF0; 
+  border-radius: 4px;
+
+  padding: 40px 40px;
+  width: 500px;           
+  max-width: 90%;         
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+
+  color: #0B0A08;        
+  font-family: 'Arimo', sans-serif;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Når synlig */
+.newsletter-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+/* Tekst */
+.newsletter-popup-text {
+  margin: 0 0 28px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Knapp */
+.newsletter-popup-close {
+  border: none;
+  outline: none;
+
+  padding: 12px 32px;
+  border-radius: 999px;
+
+  background: #DC4131; 
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.newsletter-popup-close:hover {
+  background: #AE2E21; 
+}
+/* DENNE ER NY */
+
+
 
 /* 💻 MELLOMSTORE SKJERMER – PRODUKTER (769–1400px) */
 @media (max-width: 1400px) and (min-width: 769px) {
