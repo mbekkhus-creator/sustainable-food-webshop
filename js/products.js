@@ -17,27 +17,27 @@ const hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', openMenu);
   closeBtn.addEventListener('click', closeMenu);
 
-  // Lukke på ESC
+  // close on ESC key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
 
 
 
-// Finn handlekurv-teller
+// Find cart count element
 const cartCountEl = document.getElementById('cart-count');
 let cartCount = 0;
 
-// Finn alle "Add to basket"-knappene
+// Find all "Add to basket"-buttons
 const addButtons = document.querySelectorAll('.add-btn');
 
 addButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    // Øk antall
+    // increase count
     cartCount++;
     cartCountEl.textContent = cartCount;
 
-    // Liten "bump"-animasjon
+    // tiny "bump" animation
     cartCountEl.classList.add('cart-bump');
     setTimeout(() => {
       cartCountEl.classList.remove('cart-bump');
@@ -45,7 +45,7 @@ addButtons.forEach((btn) => {
   });
 });
 
-// Newsletter popup /* DENNE ER NY */
+// Newsletter popup /*
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.footer-form');
   const popup = document.getElementById('newsletterPopup');
@@ -54,25 +54,31 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!form || !popup || !closeBtn) return;
 
   form.addEventListener('submit', function (event) {
-    event.preventDefault(); // hindrer reload
+    event.preventDefault(); 
 
-    // Vis popup
+    // show popup
     popup.classList.add('is-visible');
 
-    // Tøm feltene
+    // empty form
     form.reset();
   });
 
-  // Lukk på knapp
+  // close on button click
   closeBtn.addEventListener('click', function () {
     popup.classList.remove('is-visible');
   });
 
-  // Lukk med Escape (valgfritt men digg)
+    // close on outside click
+  document.addEventListener('click', function (event) {
+    if (!popup.classList.contains('is-visible')) return;
+    if (popup.contains(event.target)) return;
+    popup.classList.remove('is-visible');
+  });
+
+  // close on ESC key
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       popup.classList.remove('is-visible');
     }
   });
 });
-/* DENNE ER NY */

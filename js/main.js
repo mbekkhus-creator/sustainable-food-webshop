@@ -17,31 +17,69 @@ const hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', openMenu);
   closeBtn.addEventListener('click', closeMenu);
 
-  // Lukke på ESC
+  // close on ESC key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
 
 
 
-// Finn handlekurv-teller
+// Find cart count element
 const cartCountEl = document.getElementById('cart-count');
 let cartCount = 0;
 
-// Finn alle "Add to basket"-knappene
+// Find all "Add to basket"-buttons
 const addButtons = document.querySelectorAll('.add-btn');
 
 addButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
-    // Øk antall
+    // increase count
     cartCount++;
     cartCountEl.textContent = cartCount;
 
-    // Liten "bump"-animasjon
+    // tiny "bump" animation
     cartCountEl.classList.add('cart-bump');
     setTimeout(() => {
       cartCountEl.classList.remove('cart-bump');
     }, 200);
+  });
+});
+
+// Newsletter popup /*
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.footer-form');
+  const popup = document.getElementById('newsletterPopup');
+  const closeBtn = popup.querySelector('.newsletter-popup-close');
+
+  if (!form || !popup || !closeBtn) return;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+
+    // show popup
+    popup.classList.add('is-visible');
+
+    // empty form
+    form.reset();
+  });
+
+  // close on button click
+  closeBtn.addEventListener('click', function () {
+    popup.classList.remove('is-visible');
+  });
+
+    // close on outside click
+  document.addEventListener('click', function (event) {
+    if (!popup.classList.contains('is-visible')) return;
+    if (popup.contains(event.target)) return;
+    popup.classList.remove('is-visible');
+  });
+
+  // close esacpe key
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      popup.classList.remove('is-visible');
+    }
   });
 });
 
