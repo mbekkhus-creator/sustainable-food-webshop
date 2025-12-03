@@ -49,7 +49,7 @@
 /* Popup-container */
 .menu-overlay {
   position: fixed;
-  top: 0px;                 /* start helt fra toppen */
+  top: 0px;                 
   left: calc(50% - 756px);
   
   width: 390px;
@@ -57,7 +57,7 @@
 
   background: #008f51;
   color: #0b0a08;
-  border-radius: 0 0 12px 12px;  /* topp flat, bunnen rund */
+  border-radius: 0 0 12px 12px;  
   
   display: none;
   z-index: 9999;
@@ -103,6 +103,7 @@
   font-size: 32px;
   text-transform: uppercase;
   align-self: center;
+  display: none;
 }
 
 /* Lenker */
@@ -189,7 +190,6 @@
 
 /* --- BODY --- */
 body {
-  max-width: 1512px;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -346,7 +346,7 @@ body {
 
 .farms {
   background: #f7f2de;
-  border-top: 1px solid #0b0a08; 
+  border-top: 1px solid #0b0a08;
   margin-top: 34px;
 }
 
@@ -361,7 +361,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Venstre kolonne – 507px bred */
+/* Venstre kolonne – 507px bred på desktop */
 .farms-left {
   width: 507px;
   display: flex;
@@ -375,7 +375,6 @@ body {
   font-size: 36px;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0;
   text-align: center;
   color: #0b0a08;
   margin: 0;
@@ -392,7 +391,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Selve kartboksen */
+/* Kartboks */
 .farms-map {
   width: 745px;
   height: 478px;
@@ -400,7 +399,6 @@ body {
   overflow: hidden;
 }
 
-/* Iframe inni kartet – følger boksen, ikke større */
 .farms-map iframe {
   width: 100%;
   height: 100%;
@@ -408,15 +406,7 @@ body {
   display: block;
 }
 
-
 /* TOPPLINJE FOOTER */
-.footer-topline {
-  background: #dc4131;
-  height: 113px;
-  position: relative;
-  max-width: 1512px;
-  margin: 0 auto;
-}
 
 .footer-topline .footer-logo {
   position: absolute;
@@ -433,11 +423,18 @@ body {
   margin: 0;
 }
 
+.footer-topline {
+  background: #dc4131;
+  height: 113px;
+  position: relative;
+  width: 100vw;                     
+}
+
 /* HVIT LINJE I FOOTER */
 .footer-topline::after {
   content: "";
   position: absolute;
-  left: 28px;
+  left: 0;
   right: 0;
   bottom: 0;
   height: 1px;
@@ -600,55 +597,10 @@ body {
 }
 /* DENNE ER NY */
 
-
-
-/* 💻 MELLOMSTORE SKJERMER – PRODUKTER (769–1400px) */
-@media (max-width: 1400px) and (min-width: 769px) {
-  .collage-grid {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 52px;
-    row-gap: 52px;
-    justify-content: center;
-  }
-
-  .product-card,
-  .product-media {
-    width: 100%;
-    max-width: 454px;
-  }
-}
-
-/* 💻 MELLOMSTORE SKJERMER – FARMS (769–1200px) */
-@media (max-width: 1200px) and (min-width: 769px) {
-
-  .farms-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 0 45px;
-    min-height: auto;
-  }
-
-  .farms-left {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .farms-map-col {
-    border-left: none;
-    padding-left: 0;
-  }
-
-  .farms-map {
-    width: 100%;
-    max-width: 745px;
-  }
-}
-
-
-/* 📱 MOBILVERSJON */
+/* 📱 MOBIL – 0–768px */
 @media (max-width: 768px) {
-  /* HEADER */
+
+  /* --- HEADER --- */
   .header-inner {
     padding: 0 16px;
   }
@@ -656,17 +608,16 @@ body {
   .cart-btn {
     margin-right: 16px;
   }
-  
-  /* MOBILVERSJON AV POPUP-MENYEN */
-@media (max-width: 480px) {
+
+  /* --- MENY / OVERLAY --- */
   .menu-overlay {
     top: 0;
-    left: 0;              /* start helt fra venstre på mobil */
-    width: 100%;          /* fyll hele bredden */
-    height: 100vh;        /* fyll hele høyden på skjermen */
-    max-width: none;      /* ikke lås til 390 på mobil */
-    border-radius: 0;     /* kant i kant med skjermen */
-    box-shadow: none;     /* valgfritt – ser mer “app” ut */
+    left: 0;              /* fullskjerm på mobil */
+    width: 100%;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .menu-inner {
@@ -674,18 +625,20 @@ body {
     height: 100%;
   }
 
+  .menu-logo {
+    display: block;       /* FRAM-logo synlig i toppbaren i menyen */
+  }
+
   .menu-nav {
-    gap: 32px;            /* litt strammere mellom lenker */
+    gap: 32px;
   }
 
   .menu-nav a,
   .menu-footer a {
-    font-size: 20px;      /* litt mindre tekst på mobil */
+    font-size: 20px;
   }
-}
 
-
-  /* PRODUCE SECTION */
+  /* --- PRODUCE SECTION --- */
   .products-header {
     padding-left: 21px;
     padding-right: 21px;
@@ -703,7 +656,7 @@ body {
     font-size: 18px;
   }
 
-  /* PRODUKT "KORT" MED BILDER */
+  /* --- PRODUKTKORT / BILDER --- */
   .image-collage {
     padding-left: 21px;
     padding-right: 21px;
@@ -732,58 +685,64 @@ body {
     right: 21px;
     font-size: 24px;
   }
-  
+
   /* --- PARTNERING FARMS – MOBIL --- */
+.farms {
+  margin-top: 45px;       /* 45px fra seksjonen over */
+  margin-bottom: 45px;    /* 45px ned til footer */
+  border: none;           /* ingen ekstra linjer her */
+  padding: 0;
+}
 
-  .farms-inner {
-    flex-direction: column;
-    padding: 0;   
-    gap: 0;
-    min-height: auto;
-  }
+.farms-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;             /* viktig: ingen side-padding som gjør linjene korte */
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  box-sizing: border-box;
+}
 
-  .farms {
-    border-top: none;
-  }
+.farms-left {
+  width: 100%;            /* full bredde = linjene går helt ut */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #0B0A08;     /* linje over tittelen */
+  border-bottom: 1px solid #0B0A08;  /* linje under tittelen */
+  box-sizing: border-box;
+  padding: 45px 0px;        /* 45px over og under teksten */
+}
 
-  .farms-left {
-    width: 100%;
-    border-top: 1px solid #0B0A08;
-    border-bottom: 1px solid #0B0A08;
-    padding: 45px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.farms-title {
+  font-size: 24px;
+  max-width: 304px;
+  text-align: center;
+  padding: 45px 0px;               /* 45px padding rundt teksten */
+}
 
-  .farms-title {
-    text-align: center;
-    font-size: 24px; 
-    max-width: 304px;
-  }
+.farms-map-col {
+  border-left: none;
+  padding: 45px 45px 45px 45px;  /* 45px rundt kartet */
+  display: block;
+}
 
-  .farms-map-col {
-    border-left: none;
-    padding-left: 0;
-    padding-top: 45px;
-    padding-bottom: 45px;
-    display: block;
-  }
+.farms-map {
+  width: 100%;
+  max-width: 340px;
+  height: 459px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
-  .farms-map {
-    width: 340px;
-    height: 459px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
-  }
+.farms-map iframe {
+  width: 100%;
+  height: 100%;
+}
 
-  .farms-map iframe {
-    width: 100%;
-    height: 100%;
-  }
-
-  /* FOOTER */
+  /* --- FOOTER – MOBIL --- */
   .site-footer {
     padding-left: 29px;
     padding-right: 21px;
@@ -793,11 +752,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-  }
-
-  .footer-topline::after {
-    margin-left: -14px;
-    margin-right: 15px;
   }
 
   .footer-title {
@@ -821,30 +775,111 @@ body {
     flex-direction: column;
     margin-top: 36px;
     padding-left: 3px;
-    gap: 16px; 
+    gap: 16px;
   }
 
   .footer-input,
   .footer-email-group {
     width: 329px;
   }
-}
 
-/* 2️⃣ VANLIG DESKTOP – 769–1512px */
-@media (max-width: 1512px) and (min-width: 769px) {
+
+/* 💻 MELLOMSTORE SKJERMER – 769–1400px */
+@media (min-width: 769px) and (max-width: 1400px) {
+
+  /* --- MENY / OVERLAY --- */
   .menu-overlay {
-    left: 0;   /* legg popupen 45px inn fra skjermkanten */
+    top: 0;
+    left: 0;              /* ikke skli ut av bildet */
+    width: 390px;
+    height: 844px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.25);
   }
-}
-  
-/* 3️⃣ MOBIL – under 768px */
-@media (max-width: 768px) {
-  .menu-overlay {
-    left: 0;
+
+  .menu-logo {
+    display: none;        /* kun synlig på mobil */
+  }
+
+  /* --- PRODUKTER / COLLAGE --- */
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 52px;
+    row-gap: 52px;
+    justify-content: center;
+  }
+
+  .product-card,
+  .product-media {
     width: 100%;
-    height: 100vh;
-    border-radius: 0;
+    max-width: 454px;
   }
+
+  /* --- FARMS-SEKSJON --- */
+  .farms {
+   border-top: none;
+  }
+
+  .farms-inner {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    min-height: auto;
+    box-sizing: border-box;
+  }
+
+  .farms-left {
+    width: 100%;
+    padding: 45px 0; 
+    border-top: 1px solid #0b0a08;
+    border-bottom: 1px solid #0B0A08;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.farms-title {
+    text-align: center;
+    font-size: 32px;
+    max-width: 377px;
+    padding: 45px 0px;
+  }
 
+  .farms-map-col {
+    width: 100%;
+    border-left: none;
+    padding: 45px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .farms-map {
+    width: 100%;
+    max-width: 745px;
+    height: 478px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .farms-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* --- FOOTER – mellomstor kan være litt løsere --- */
+  .footer-inner {
+    max-width: 1512px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+}
