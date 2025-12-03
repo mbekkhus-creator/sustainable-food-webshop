@@ -612,7 +612,7 @@ body {
   /* --- MENY / OVERLAY --- */
   .menu-overlay {
     top: 0;
-    left: 0;              /* fullskjerm på mobil */
+    left: 0;              
     width: 100%;
     height: 100vh;
     max-width: none;
@@ -626,7 +626,7 @@ body {
   }
 
   .menu-logo {
-    display: block;       /* FRAM-logo synlig i toppbaren i menyen */
+    display: block;      
   }
 
   .menu-nav {
@@ -688,16 +688,16 @@ body {
 
   /* --- PARTNERING FARMS – MOBIL --- */
 .farms {
-  margin-top: 45px;       /* 45px fra seksjonen over */
-  margin-bottom: 45px;    /* 45px ned til footer */
-  border: none;           /* ingen ekstra linjer her */
+  margin-top: 45px;       
+  margin-bottom: 45px;    
+  border: none;           
   padding: 0;
 }
 
 .farms-inner {
   width: 100%;
   margin: 0 auto;
-  padding: 0;             /* viktig: ingen side-padding som gjør linjene korte */
+  padding: 0;            
   display: flex;
   flex-direction: column;
   gap: 45px;
@@ -705,26 +705,26 @@ body {
 }
 
 .farms-left {
-  width: 100%;            /* full bredde = linjene går helt ut */
+  width: 100%;            
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #0B0A08;     /* linje over tittelen */
-  border-bottom: 1px solid #0B0A08;  /* linje under tittelen */
+  border-top: 1px solid #0B0A08;     
+  border-bottom: 1px solid #0B0A08;  
   box-sizing: border-box;
-  padding: 45px 0px;        /* 45px over og under teksten */
+  padding: 45px 0px;       
 }
 
 .farms-title {
   font-size: 24px;
   max-width: 304px;
   text-align: center;
-  padding: 45px 0px;               /* 45px padding rundt teksten */
+  padding: 45px 0px;               
 }
 
 .farms-map-col {
   border-left: none;
-  padding: 45px 45px 45px 45px;  /* 45px rundt kartet */
+  padding: 45px 45px 45px 45px;  
   display: block;
 }
 
@@ -782,6 +782,7 @@ body {
   .footer-email-group {
     width: 329px;
   }
+}
 
 
 /* 💻 MELLOMSTORE SKJERMER – 769–1400px */
@@ -790,7 +791,7 @@ body {
   /* --- MENY / OVERLAY --- */
   .menu-overlay {
     top: 0;
-    left: 0;              /* ikke skli ut av bildet */
+    left: 0;              
     width: 390px;
     height: 844px;
     border-radius: 0 0 12px 12px;
@@ -798,7 +799,7 @@ body {
   }
 
   .menu-logo {
-    display: none;        /* kun synlig på mobil */
+    display: none;       
   }
 
   /* --- PRODUKTER / COLLAGE --- */
@@ -815,41 +816,47 @@ body {
     max-width: 454px;
   }
 
-  /* --- FARMS-SEKSJON --- */
+  /* --- PARTNERING FARMS – TABLET / MELLOMSTORE --- */
   .farms {
-   border-top: none;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border: none;
+    padding: 0;
   }
 
   .farms-inner {
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding: 0;
+    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 45px;
-    min-height: auto;
     box-sizing: border-box;
   }
 
   .farms-left {
     width: 100%;
-    padding: 45px 0; 
-    border-top: 1px solid #0b0a08;
-    border-bottom: 1px solid #0B0A08;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    border-top: 1px solid #0B0A08;      
+    border-bottom: 1px solid #0B0A08;   
+    padding: 70px 0px;
+    box-sizing: border-box;
+  }
 
-.farms-title {
-    text-align: center;
+  .farms-title {
     font-size: 32px;
     max-width: 377px;
-    padding: 45px 0px;
+    text-align: center;
+    margin: 0;
   }
 
   .farms-map-col {
     width: 100%;
     border-left: none;
-    padding: 45px 0;
+    padding: 45px 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -860,16 +867,14 @@ body {
     width: 100%;
     max-width: 745px;
     height: 478px;
+    margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
-    margin: 0 auto;
   }
 
   .farms-map iframe {
     width: 100%;
     height: 100%;
-    border: 0;
-    display: block;
   }
 
   /* --- FOOTER – mellomstor kan være litt løsere --- */
@@ -882,4 +887,4 @@ body {
     gap: 32px;
   }
 }
-}
+
