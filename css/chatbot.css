@@ -431,6 +431,10 @@ body {
     border-radius: 0;
   }
 
+  .menu-logo {
+    display: block;      
+  }
+
   .chatbot-wrapper {
     margin-top: -20px;
   }

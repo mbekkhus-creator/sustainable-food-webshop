@@ -248,11 +248,12 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
+  width: 100%; 
 }
 
 .hero-img {
   width: 100%;
-  max-width: 1512px;
+  max-width: none;
   height: 850px;
   object-fit: cover;
   margin: 0 auto;
@@ -304,17 +305,25 @@ a {
    3. CARD SECTION – DESKTOP
    ======================================== */
 
+/* Seksjonen: full bredde hvit bakgrunn */
 .cards-2 {
   background: var(--bg-white);
   padding: 90px 45px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Innholdet inni: 1512px bredde og grid */
+.cards-2 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 29px;
   position: relative;
 }
 
-/* vertical divider (desktop) */
-.cards-2::before {
+/* Vertikal linje følger innholdet, ikke hele skjermen */
+.cards-2 .container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -327,6 +336,7 @@ a {
 
 .card {
   background: var(--bg-white);
+  width: 100%;
   padding: 32px 45px 56px;
   text-align: center;
   border: none;
@@ -415,7 +425,8 @@ a {
 
 .how {
   background: var(--bg-primary);
-  max-width: 1512px;
+  width: 100%;              
+  max-width: none;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -486,7 +497,7 @@ a {
 
 .popular {
   background: var(--bg-white);
-  max-width: 1512px;
+  width: 100%;
   min-height: 800px;
   margin: 0 auto;
   padding: 90px 45px;
@@ -606,8 +617,9 @@ a {
   background: var(--red);
   height: 113px;
   position: relative;
-  max-width: 1512px;
-  margin: 0 auto;
+  width: 100%;         
+  max-width: none;
+  margin: 0;
 }
 
 .footer-topline .footer-logo {
@@ -628,7 +640,7 @@ a {
 .footer-topline::after {
   content: "";
   position: absolute;
-  left: 28px;
+  left: 0px;
   right: 0;
   bottom: 0;
   height: 1px;
@@ -636,8 +648,6 @@ a {
 }
 
 .site-footer {
-  max-width: 1512px;
-  margin: 0 auto;
   background: var(--red);
   color: var(--bg-white);
   padding: 63px 43px 80px;
@@ -658,7 +668,7 @@ a {
 .footer-title {
   font-family: "Arimo", sans-serif;
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   margin: 0 0 12px 0;
 }
@@ -667,7 +677,8 @@ a {
   font-family: "Frank Ruhl Libre", serif;
   font-size: 20px;
   margin: 0 0 70px 0;
-  max-width: 300px;
+  width: 330px;
+  
 }
 
 .footer-form {
@@ -744,9 +755,9 @@ a {
   border: 1px solid #E1EAF0; 
   border-radius: 4px;
 
+  box-sizing: content-box;
   padding: 40px 40px;
-  width: 500px;           
-  max-width: 90%;         
+  width: 400px;          
 
   display: flex;
   flex-direction: column;
@@ -861,16 +872,20 @@ a {
   /* ---- CARD SECTION – MOBILE ---- */
 
   .cards-2 {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 90px 24px 0;
-  }
+  position: relative;
+  padding: 90px 24px 0;
+}
+
+/* grid flyttes inn hit */
+.cards-2 .container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
   /* skjul den vertikale linja på mobil */
-  .cards-2::before {
-    display: none;
-  }
+.cards-2 .container::before {
+  display: none;
+}
 
   .cards-2::after {
     content: "";
