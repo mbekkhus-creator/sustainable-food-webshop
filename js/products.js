@@ -166,7 +166,52 @@ function initNewsletterPopup() {
     }
   });
 }
+/* COMING SOON POPUP */
+const checkoutLink = document.getElementById("checkoutLink");
+const comingSoon = document.getElementById("comingSoonPopup");
+const comingSoonClose = document.querySelector(".comingsoon-close");
 
+if (checkoutLink && comingSoon) {
+  checkoutLink.addEventListener("click", function (e) {
+    e.preventDefault(); // stopper navigering
+
+    // Lukk menyen
+    if (typeof closeMenu === "function") {
+      closeMenu();
+    }
+
+    // Vis popup
+    comingSoon.classList.add("is-visible");
+    comingSoon.setAttribute("aria-hidden", "false");
+  });
+}
+
+if (comingSoon && comingSoonClose) {
+  comingSoonClose.addEventListener("click", function () {
+    comingSoon.classList.remove("is-visible");
+    comingSoon.setAttribute("aria-hidden", "true");
+  });
+}
+
+// Klikk utenfor popup for å lukke
+document.addEventListener("click", function (event) {
+  if (!comingSoon || !comingSoon.classList.contains("is-visible")) return;
+
+  // 🔴 VIKTIG: ikke lukk hvis vi klikket på checkout-knappen
+  if (comingSoon.contains(event.target) || event.target === checkoutLink) return;
+
+  // Andre klikk lukker popupen
+  comingSoon.classList.remove("is-visible");
+  comingSoon.setAttribute("aria-hidden", "true");
+});
+
+// Lukk COMING SOON med ESC
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && comingSoon.classList.contains("is-visible")) {
+    comingSoon.classList.remove("is-visible");
+    comingSoon.setAttribute("aria-hidden", "true");
+  }
+});
 
 // ===============================
 // 4. INIT VED LOAD
