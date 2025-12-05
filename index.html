@@ -16,7 +16,10 @@
   <!-- Header -->
    <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Åpne meny">
+      <button class="hamburger" 
+      aria-label="Åpne meny"
+      aria-controls="mobileMenu"
+      aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
@@ -37,7 +40,11 @@
   </header>
 
    <!-- POPUP-MENY -->
-<div class="menu-overlay" id="mobileMenu" aria-hidden="true">
+<div class="menu-overlay" 
+id="mobileMenu" 
+aria-hidden="true"
+role="dialog"
+aria-modal="true">
   <button class="menu-close" aria-label="Close menu">&times;</button>
 
   <div class="menu-inner">
@@ -61,7 +68,7 @@
 </div>
 
   <!-- Hero -->
-  <section class="hero" role="banner">
+  <section class="hero">
     <img class="hero-img" src="images/headerImage.png" alt="Green mountains and sky" />
     <div class="hero-overlay">
       <h1 class="hero-title">FRAM</h1>
@@ -157,7 +164,7 @@
     <article class="product-card">
       <div class="product-media">
         <img src="images/OATS.png" alt="Oats">
-        <button class="add-btn">
+        <button class="add-btn" aria-label="Add Oats to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -175,7 +182,7 @@
     <article class="product-card">
       <div class="product-media">
         <img src="images/REDONIONS.png" alt="Red Onions">
-        <button class="add-btn">
+        <button class="add-btn" aria-label="Add Red Onions to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -193,7 +200,7 @@
     <article class="product-card">
       <div class="product-media">
         <img src="images/GARLIC.png" alt="Garlic">
-        <button class="add-btn">
+        <button class="add-btn" aria-label="Add Garlic to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -224,21 +231,41 @@
         Sign up for our newsletter to be the first to know about new produce or other exciting news!
       </p>
 
-      <form class="footer-form">
-        <input type="text" class="footer-input" placeholder="First name">
-        <div class="footer-email-group">
-          <input type="email" class="footer-input email-input" placeholder="E-mail address">
-          <button class="footer-submit" aria-label="Submit email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
-          </button>
-        </div>
-      </form>
+ <form class="footer-form">
+  <label class="visually-hidden" for="footer-firstname">First name</label>
+  <input
+    id="footer-firstname"
+    type="text"
+    class="footer-input"
+    placeholder="First name"
+  >
+
+  <div class="footer-email-group">
+    <label class="visually-hidden" for="footer-email">E-mail address</label>
+    <input
+      id="footer-email"
+      type="email"
+      class="footer-input email-input"
+      placeholder="E-mail address"
+      required
+    >
+    <button class="footer-submit" aria-label="Submit email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+</form>
     </div>
 </footer>
-<div class="newsletter-popup" id="newsletterPopup" aria-hidden="true">
-  <p class="newsletter-popup-text">
+
+<div class="newsletter-popup" 
+id="newsletterPopup" 
+aria-hidden="true"
+role="dialog"
+aria-modal="true"
+aria-labelledby="newsletterPopupTitle">
+  <p id="newsletterPopupTitle" class="newsletter-popup-text">
     You’re in! Expect fresh updates from our partner farms in your inbox soon.
   </p>
   <button type="button" class="newsletter-popup-close">
