@@ -8,14 +8,23 @@
   <link rel="stylesheet" href="css/products.css">
   
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300&display=swap" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Frank+Ruhl+Libre:wght@300&display=swap" rel="stylesheet">
 </head>
   
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  
   <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Åpne meny"><span></span><span></span><span></span></button>
+      <button 
+        class="hamburger" 
+        aria-label="Åpne meny"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
       <a class="logo" href="index.html">FRAM</a>
     </div>
 
@@ -27,172 +36,178 @@
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
       </svg>
 
-  <!-- tall (badge) til handlekurv-->
+      <!-- tall (badge) til handlekurv-->
       <span class="cart-count" id="cart-count" aria-live="polite">0</span>
     </button>
   </header>
   
   <!-- POPUP-MENY -->
-<div class="menu-overlay" id="mobileMenu" aria-hidden="true">
-  <button class="menu-close" aria-label="Close menu">×</button>
+  <div 
+    class="menu-overlay" 
+    id="mobileMenu" 
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button class="menu-close" aria-label="Close menu">×</button>
 
-  <div class="menu-inner">
-    <!-- Topp-linje med FRAM -->
-    <div class="menu-bar">
-      <span class="menu-logo">FRAM</span>
-    </div>
+    <div class="menu-inner">
+      <!-- Topp-linje med FRAM -->
+      <div class="menu-bar">
+        <span class="menu-logo">FRAM</span>
+      </div>
 
-    <!-- Sentrerte lenker -->
-    <nav class="menu-nav">
-      <a href="index.html">HOME</a>
-      <a href="products.html">PRODUCTS</a>
-      <a href="chatbot.html">CHATBOT</a>
-    </nav>
+      <!-- Sentrerte lenker -->
+      <nav class="menu-nav">
+        <a href="index.html">HOME</a>
+        <a href="products.html">PRODUCTS</a>
+        <a href="chatbot.html">CHATBOT</a>
+      </nav>
 
-    <!-- Checkout nederst -->
-    <div class="menu-footer">
-      <a href="checkout.html" id="checkoutLink">CHECKOUT</a>
-    </div>
-  </div> 
-</div>
-
-  <!-- Produce section -->
-  <section class="products-header">
-    <h1 class="products-title">PRODUCE</h1>
-    <p class="products-description">
-    Explore our selection of seasonal produce, sourced directly from local farms to ensure peak freshness and quality. Every item is chosen with care, supporting sustainable practices and bringing the best of the harvest to your table.
-  </p>
-  </section>
-
-  <!-- Bilder -->
-  <section class="image-collage">
-    <div class="collage-grid">
-      
-      <!-- Oats -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/Oats.jpg?raw=true" alt="Oats">
-        <button class="add-btn" data-product="oats">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7"/>
-          </svg>
-        </button>
+      <!-- Checkout nederst -->
+      <div class="menu-footer">
+        <a href="checkout.html" id="checkoutLink">CHECKOUT</a>
       </div>
-      <h3 class="product-name">Oats</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">16 kr / kg</span>
-      </div>
-    </article>
-
-    <!-- Red Onions -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/RedOnions.jpg?raw=true" alt="Red Onions">
-        <button class="add-btn" data-product="redonions">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7"/>
-          </svg>
-        </button>
-      </div>
-      <h3 class="product-name">Red Onions</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">45 kr / kg</span>
-      </div>
-    </article>
-      
-       <!-- Garlic -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/Garlic.jpg?raw=true" alt="Garlic">
-        <button class="add-btn" data-product="garlic">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7"/>
-          </svg>
-        </button>
-      </div>
-      <h3 class="product-name">Garlic</h3>
-      <div class="product-info">
-        <span class="product-weight">1 pk (200 g)</span>
-        <span class="product-price">38 kr / pk</span>
-      </div>
-    </article>
-     
-         <!-- Potatoes -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/Potatoes.jpg?raw=true" alt="Potatoes">
-        <button class="add-btn" data-product="potatoes">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7"/>
-          </svg>
-        </button>
-      </div>
-      <h3 class="product-name">Potatoes</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">32 kr / kg</span>
-      </div>
-    </article>
-      
-           <!-- Carrots -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="https://github.com/LinnSandra/PAB_PRO1001/blob/main/Images/Carrots.jpg?raw=true" alt="Carrots">
-        <button class="add-btn" data-product="carrots">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7"/>
-          </svg>
-        </button>
-      </div>
-      <h3 class="product-name">Carrots</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">48 kr / kg</span>
-      </div>
-    </article>
-  </section>
-    
-<section class="farms">
-  <div class="farms-inner">
-    <!-- Venstre kolonne -->
-    <div class="farms-left">
-      <h2 class="farms-title">
-        SEE OUR PARTNERING FARMS
-      </h2>
-    </div>
-
-    <!-- Høyre kolonne (kart) -->
-    <div class="farms-map-col">
-      <div class="farms-map">
-        <iframe
-          src="https://www.google.com/maps?q=Braastad%20G%C3%A5rd%20Roa%20Norway&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Partner farms map">
-        </iframe>
-      </div>
-    </div>
+    </div> 
   </div>
-</section>
 
+  <main id="main">
+    <!-- Produce section -->
+    <section class="products-header">
+      <h1 class="products-title">PRODUCE</h1>
+      <p class="products-description">
+        Explore our selection of seasonal produce, sourced directly from local farms to ensure peak freshness and quality. Every item is chosen with care, supporting sustainable practices and bringing the best of the harvest to your table.
+      </p>
+    </section>
 
+    <!-- Bilder -->
+    <section class="image-collage">
+      <div class="collage-grid">
+        
+        <!-- Oats -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/OATS.png" alt="Oats">
+            <button class="add-btn" data-product="oats" aria-label="Add Oats to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Oats</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">16 kr / kg</span>
+          </div>
+        </article>
+
+        <!-- Red Onions -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/REDONIONS.png" alt="Red Onions">
+            <button class="add-btn" data-product="redonions" aria-label="Add Red Onions to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Red Onions</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">45 kr / kg</span>
+          </div>
+        </article>
+        
+        <!-- Garlic -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/GARLIC.png" alt="Garlic">
+            <button class="add-btn" data-product="garlic" aria-label="Add Garlic to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Garlic</h3>
+          <div class="product-info">
+            <span class="product-weight">1 pk (200 g)</span>
+            <span class="product-price">38 kr / pk</span>
+          </div>
+        </article>
+        
+        <!-- Potatoes -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/POTATOES.png" alt="Potatoes">
+            <button class="add-btn" data-product="potatoes" aria-label="Add Potatoes to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Potatoes</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">32 kr / kg</span>
+          </div>
+        </article>
+        
+        <!-- Carrots -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/CARROTS.png" alt="Carrots">
+            <button class="add-btn" data-product="carrots" aria-label="Add Carrots to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7"/>
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Carrots</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">48 kr / kg</span>
+          </div>
+        </article>
+
+      </div> <!-- end .collage-grid -->
+    </section>
     
-    <section class="footer-topline"> <div class="footer-inner">
+    <section class="farms">
+      <div class="farms-inner">
+        <!-- Venstre kolonne -->
+        <div class="farms-left">
+          <h2 class="farms-title">
+            SEE OUR PARTNERING FARMS
+          </h2>
+        </div>
+
+        <!-- Høyre kolonne (kart) -->
+        <div class="farms-map-col">
+          <div class="farms-map">
+            <iframe
+              src="https://www.google.com/maps?q=Braastad%20G%C3%A5rd%20Roa%20Norway&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Partner farms map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="footer-topline">
+    <div class="footer-inner">
     </div>
-  <h2 class="footer-logo">FRAM</h2>
-</section>
+    <h2 class="footer-logo">FRAM</h2>
+  </section>
 
-
-<footer class="site-footer">
-  
-
+  <footer class="site-footer">
     <div class="footer-right">
       <h3 class="footer-title">STAY UPDATED</h3>
       <p class="footer-text">
@@ -200,35 +215,74 @@
       </p>
 
       <form class="footer-form">
-  <input type="text" class="footer-input" placeholder="First name">
-  <div class="footer-email-group">
-    <input type="email" class="footer-input email-input" placeholder="E-mail address">
-    <button class="footer-submit" aria-label="Submit email">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M13 5l7 7-7 7"/>
-      </svg>
+        <label class="visually-hidden" for="footer-firstname">First name</label>
+        <input
+          id="footer-firstname"
+          type="text"
+          class="footer-input"
+          placeholder="First name"
+        >
+
+        <div class="footer-email-group">
+          <label class="visually-hidden" for="footer-email">E-mail address</label>
+          <input
+            id="footer-email"
+            type="email"
+            class="footer-input email-input"
+            placeholder="E-mail address"
+            required
+          >
+        <button class="footer-submit" aria-label="Submit email">
+           <svg 
+             width="16" 
+             height="16" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="#FFFFFF" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round"
+  >
+    <path d="M5 12h14M13 5l7 7-7 7"/>
+  </svg>
+</button>
+
+        </div>
+      </form>
+    </div>
+  </footer>
+
+  <div 
+    class="newsletter-popup" 
+    id="newsletterPopup" 
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="newsletterPopupTitle"
+  >
+    <p id="newsletterPopupTitle" class="newsletter-popup-text">
+      You’re in! Expect fresh updates from our partner farms in your inbox soon.
+    </p>
+    <button type="button" class="newsletter-popup-close">
+      Got it!
     </button>
   </div>
-</form>
-    </div>
-  </div>
-</footer>
-<div class="newsletter-popup" id="newsletterPopup" aria-hidden="true">
-  <p class="newsletter-popup-text">
-    You’re in! Expect fresh updates from our partner farms in your inbox soon.
-  </p>
-  <button type="button" class="newsletter-popup-close">
-    Got it!
-  </button>
-</div>
 
-<!-- Coming soon popup -->
-<div class="comingsoon-popup" id="comingSoonPopup" aria-hidden="true">
-  <p class="comingsoon-text">
-    Checkout is coming soon! This feature is currently under construction.
-  </p>
-  <button type="button" class="comingsoon-close">Got it!</button>
-</div>
-<script src="js/products.js"></script>
+  <!-- Coming soon popup -->
+  <div 
+    class="comingsoon-popup" 
+    id="comingSoonPopup" 
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="comingSoonPopupTitle"
+  >
+    <p id="comingSoonPopupTitle" class="comingsoon-text">
+      Checkout is coming soon! This feature is currently under construction.
+    </p>
+    <button type="button" class="comingsoon-close">Got it!</button>
+  </div>
+
+  <script src="js/products.js"></script>
 </body>
 </html>

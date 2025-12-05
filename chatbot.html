@@ -12,9 +12,13 @@
 </head>
   
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
    <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" aria-label="Åpne meny">
+      <button class="hamburger" 
+      aria-label="Åpne meny"
+      aria-controls="mobileMenu"
+      aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
@@ -35,7 +39,11 @@
   </header>
 
    <!-- POPUP-MENY -->
-<div class="menu-overlay" id="mobileMenu" aria-hidden="true">
+<div class="menu-overlay" 
+id="mobileMenu" 
+aria-hidden="true"
+role="dialog"
+aria-modal="true">
   <button class="menu-close" aria-label="Close menu">&times;</button>
 
   <div class="menu-inner">
@@ -60,12 +68,17 @@
 
    
   <!-- CHATBOT SECTION -->
+   <main id="main">
   <div class="chatbot-header-bg"></div>
 
   <div class="chatbot-wrapper">
     <div class="chatbot-box">
 
-      <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-messages" 
+      id="chatbot-messages"
+      role="log"
+      aria-live="polite"
+      aria-label="Chat conversation with FRAM AI">
 
         <!-- BOT-SVAR MED FRAM SOM LABEL UTENFOR BOBLA (beholdt) -->
         <div class="chatbot-row bot-row">
@@ -74,18 +87,18 @@
             <p>What can I help you with today? </p>
           </div>
         </div>
-
-        <!-- (den statiske brukermeldingen er fjernet) -->
-
       </div>
 
       <!-- INPUT-BOBLE + SEND-KNAPP MED PIL/X -->
       <div class="chatbot-input-row">
         <div class="chatbot-message user chatbot-input-bubble">
-          <textarea
-            id="chat-input"
-            placeholder="Ask FRAM anything.."
-          ></textarea>
+          <label class="visually-hidden" for="chat-input">
+  Ask FRAM anything
+</label>
+<textarea
+  id="chat-input"
+  placeholder="Ask FRAM anything.."
+  ></textarea>
         </div>
 
         <button class="chatbot-send" id="chat-send-btn" aria-label="Send message">
@@ -109,9 +122,9 @@
           <span class="icon-x" aria-hidden="true">✕</span>
         </button>
       </div>
-
     </div>
   </div>
+    </main>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>

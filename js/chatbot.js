@@ -1,34 +1,31 @@
-// js/chatbot.js
-
-// === CHATBOT-ELEMENTER ===
+// === CHATBOT ELEMENTS ===
 const messagesEl = document.getElementById("chatbot-messages");
 const inputEl = document.getElementById("chat-input");
 const sendBtn = document.getElementById("chat-send-btn");
 
-// Hvis vi ikke er på chatbot-siden, gjør ingenting
 if (!messagesEl || !inputEl || !sendBtn) {
-  // ikke chatbot-side
+
 } else {
   let isTyping = false;
   let shouldAutoScroll = true;
 
-    messagesEl.addEventListener("scroll", () => {
+  messagesEl.addEventListener("scroll", () => {
     const distanceFromBottom =
       messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight;
 
-    // Slå av auto-scroll hvis brukeren har scrollet opp
+    // Disable auto-scroll if user scrolls up
     shouldAutoScroll = distanceFromBottom < 10;
   });
 
-  // Auto-resize av tekstfeltet
+  // Auto-resize textarea
   function autosizeTextarea() {
     inputEl.style.height = "auto";
     inputEl.style.height = inputEl.scrollHeight + "px";
   }
   inputEl.addEventListener("input", autosizeTextarea);
 
-  // Brukermelding (blå boble)
-   function addUserMessage(text) {
+  // User message (blue bubble)
+  function addUserMessage(text) {
     const row = document.createElement("div");
     row.className = "chatbot-row user-row";
 
@@ -44,8 +41,7 @@ if (!messagesEl || !inputEl || !sendBtn) {
     }
   }
 
-
-  // FRAM "skriver..."-boble
+  // FRAM "typing..." bubble
   function showTypingIndicator() {
     isTyping = true;
     sendBtn.classList.add("is-cancel");
@@ -74,7 +70,6 @@ if (!messagesEl || !inputEl || !sendBtn) {
     }
   }
 
-
   function hideTypingIndicator() {
     isTyping = false;
     sendBtn.classList.remove("is-cancel");
@@ -82,7 +77,7 @@ if (!messagesEl || !inputEl || !sendBtn) {
     if (typingRow) typingRow.remove();
   }
 
-  // Bot-melding
+  // Bot message
   function addBotMessage(text) {
     const row = document.createElement("div");
     row.className = "chatbot-row bot-row";
@@ -104,12 +99,10 @@ if (!messagesEl || !inputEl || !sendBtn) {
     }
   }
 
-
-
-// === AI-KALL TIL OPENAI ===
-async function getAIResponse(userQuestion) {
-  // Produktinfo hentet fra products.html
-  const productCatalog = `
+  // === AI CALL TO OPENAI ===
+  async function getAIResponse(userQuestion) {
+    // Product info from products.html
+    const productCatalog = `
 You are FRAM, an AI assistant for a sustainable Norwegian food delivery service.
 You answer questions about FRAM's products based on this catalog:
 
@@ -141,48 +134,62 @@ RULES:
 - Answer briefly and clearly.
 `;
 
-  // Vi bygger en enkel prompt som inkluderer både katalog og spørsmålet
-  const fullPrompt = `
+    const fullPrompt = `
 ${productCatalog}
 
 User question:
 ${userQuestion}
 `;
 
-  try {
-    const response = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${window.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        input: fullPrompt
-      })
-    });
+    //  Check API key
+    if (!window.OPENAI_API_KEY) {
+      return "FRAM AI is missing an API key and cannot respond right now.";
+    }
 
-    const data = await response.json();
-    console.log("OpenAI response:", data); // hjelper hvis noe feiler
+    try {
+      const response = await fetch("https://api.openai.com/v1/responses", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${window.OPENAI_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          input: fullPrompt
+        })
+      });
 
-    const aiText =
-      data.output_text ??
-      data.output?.[0]?.content?.[0]?.text ??
-      "I'm not sure how to answer that.";
+      let data;
 
-    return aiText;
-  } catch (error) {
-    console.error(error);
-    return "Oops! Something went wrong connecting to FRAM's AI 🤖";
+      // try parsing JSON separately
+      try {
+        data = await response.json();
+      } catch {
+        return "FRAM AI received an invalid response from the server.";
+      }
+
+      // check HTTP status
+      if (!response.ok) {
+        console.error("API error:", response.status, data);
+        return `FRAM AI encountered a server error (code: ${response.status}).`;
+      }
+
+      const aiText =
+        data.output_text ??
+        data.output?.[0]?.content?.[0]?.text ??
+        "I'm not sure how to answer that.";
+
+      return aiText;
+    } catch (error) {
+      console.error(error);
+      return "Oops! Something went wrong while contacting FRAM's AI 🤖";
+    }
   }
-}
 
-
-
-  // Klikk på send-knappen
+  // Send button click
   sendBtn.addEventListener("click", async () => {
     if (isTyping) {
-      // hvis knappen står i "X"-modus
+      // cancel typing state
       hideTypingIndicator();
       return;
     }
@@ -190,23 +197,23 @@ ${userQuestion}
     const text = inputEl.value.trim();
     if (!text) return;
 
-    // 1) vis brukermeldingen
+    // 1) show user message
     addUserMessage(text);
     inputEl.value = "";
     autosizeTextarea();
 
-    // 2) vis "FRAM skriver..."
+    // 2) show "FRAM is typing..."
     showTypingIndicator();
 
-    // 3) hent AI-svar
+    // 3) get AI response
     const aiResponse = await getAIResponse(text);
 
-    // 4) fjern typing og vis svar
+    // 4) remove typing indicator and show response
     hideTypingIndicator();
     addBotMessage(aiResponse);
   });
 
-  // Send på Enter (Shift+Enter = linjeskift)
+  // Send on Enter (Shift+Enter = newline)
   inputEl.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();

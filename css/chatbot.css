@@ -1,3 +1,42 @@
+:root {
+  --bg-primary: #f7f2de;
+  --bg-white: #ffffff;
+  --border-light: #e0e0e0;
+  --red: #dc4131;
+  --red-hover: #ae2e21;
+  --green: #008f51;
+  --text-dark: #0b0a08;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 8px 12px;
+  background: black;
+  color: white;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+
+
 /* ---------------------------------------------------
    HEADER + NAV
 ------------------------------------------------------ */
