@@ -6,6 +6,9 @@
   border-bottom: 1px solid #0b0a08;
   display: flex;
   align-items: center;
+  position: sticky;   
+  top: 0;             
+  z-index: 10000;
 }
 
 .header-inner {
@@ -182,7 +185,7 @@
   border-radius: 999px;
   border: 2px solid #008f51;
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -271,8 +274,46 @@ body {
 }
 
 .add-btn:hover {
-  opacity: 0.4;
   transform: translateY(-1px);
+}
+
+.add-btn.active {
+  width: 100%;
+  height: 38px;
+  padding: 10px 16px;
+  border-radius: 44px;
+  background: #ffffff;
+  color: #0b0a08;
+  border: 1px solid #0b0a08;
+  width: auto;
+  padding: 10px 12px;
+}
+
+/* Inni kontrollknappen */
+.qty-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #0b0a08;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.qty-number {
+  font-size: 16px;
+  min-width: 14px;
+  text-align: center;
 }
 
 /* --- BILDE COLLAGE --- */

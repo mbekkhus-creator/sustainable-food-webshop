@@ -70,11 +70,14 @@ a {
   display: flex;
   align-items: center;
   margin: 0;
+  position: sticky;   
+  top: 0;             
+  z-index: 10000;
 }
 
 .header-inner {
   width: 100%;
-  max-width: 1512px;
+  max-width: none;
   margin: 0 auto;
   padding: 0 45px;
   display: grid;
