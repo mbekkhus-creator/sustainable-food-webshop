@@ -39,8 +39,33 @@ document.addEventListener('keydown', (e) => {
 // 2. HANDLEKURV / PRODUKTKNAPPER
 // ===============================
 
+const CART_STORAGE_KEY = 'framCart';
+
 // Holder styr på antall per produkt, f.eks. { oats: 2, garlic: 1 }
 const cartState = {};
+
+// Last inn handlekurv fra localStorage
+function loadCartState() {
+  try {
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+    if (!stored) return;
+    const parsed = JSON.parse(stored);
+    if (parsed && typeof parsed === 'object') {
+      Object.assign(cartState, parsed);
+    }
+  } catch (err) {
+    console.error('Kunne ikke lese handlekurv fra localStorage', err);
+  }
+}
+
+// Lagre handlekurv til localStorage
+function saveCartState() {
+  try {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartState));
+  } catch (err) {
+    console.error('Kunne ikke lagre handlekurv til localStorage', err);
+  }
+}
 
 // Finn handlekurv-knappen og badget
 const cartBtn = document.querySelector('.cart-btn');
@@ -59,6 +84,9 @@ function updateCartBadge() {
     cartCountEl.style.display = 'inline-flex';
     cartCountEl.textContent = total;
   }
+
+  // lagre hver gang noe endres
+  saveCartState();
 }
 
 // Setter en knapp tilbake til "Add to basket"
@@ -72,6 +100,52 @@ function resetButton(btn) {
   `;
 }
 
+// Aktiverer én knapp i aktiv state (brukes både ved klikk og ved gjenoppretting fra localStorage)
+function activateButton(btn, productId, initialQty) {
+  let qty = initialQty || 1;
+  cartState[productId] = qty;
+
+  btn.classList.add('active');
+  btn.innerHTML = `
+    <div class="qty-control">
+      <button type="button" class="qty-btn minus">-</button>
+      <span class="qty-number">${qty}</span>
+      <button type="button" class="qty-btn plus">+</button>
+    </div>
+  `;
+
+  const minus = btn.querySelector('.minus');
+  const plus = btn.querySelector('.plus');
+  const number = btn.querySelector('.qty-number');
+
+  // MINUS
+  minus.addEventListener('click', (e) => {
+    e.stopPropagation(); // ikke trigge parent-click
+    qty = Math.max(0, qty - 1);
+
+    if (qty === 0) {
+      delete cartState[productId];
+      resetButton(btn);
+    } else {
+      cartState[productId] = qty;
+      number.textContent = qty;
+    }
+
+    updateCartBadge();
+  });
+
+  // PLUSS
+  plus.addEventListener('click', (e) => {
+    e.stopPropagation();
+    qty++;
+    cartState[productId] = qty;
+    number.textContent = qty;
+    updateCartBadge();
+  });
+
+  updateCartBadge();
+}
+
 // Legger på logikk på alle .add-btn-knapper
 function initProductButtons() {
   const buttons = document.querySelectorAll('.add-btn');
@@ -79,51 +153,18 @@ function initProductButtons() {
     const productId = btn.dataset.product;
     if (!productId) return;
 
+    const existingQty = cartState[productId] || 0;
+
+    // Hvis produktet allerede ligger i handlekurven fra før, sett knapp rett i aktiv state
+    if (existingQty > 0) {
+      activateButton(btn, productId, existingQty);
+    }
+
+    // Klikk når den er i "Add to basket"-state
     btn.addEventListener('click', () => {
       // Hvis knappen allerede er aktiv (viser +/−), ikke trigge på nytt
       if (btn.classList.contains('active')) return;
-
-      let qty = 1;
-      cartState[productId] = qty;
-      updateCartBadge();
-
-      btn.classList.add('active');
-      btn.innerHTML = `
-        <div class="qty-control">
-          <button type="button" class="qty-btn minus">-</button>
-          <span class="qty-number">${qty}</span>
-          <button type="button" class="qty-btn plus">+</button>
-        </div>
-      `;
-
-      const minus = btn.querySelector('.minus');
-      const plus = btn.querySelector('.plus');
-      const number = btn.querySelector('.qty-number');
-
-      // MINUS
-      minus.addEventListener('click', (e) => {
-        e.stopPropagation(); // ikke trigge parent-click
-        qty = Math.max(0, qty - 1);
-
-        if (qty === 0) {
-          delete cartState[productId];
-          resetButton(btn);
-        } else {
-          cartState[productId] = qty;
-          number.textContent = qty;
-        }
-
-        updateCartBadge();
-      });
-
-      // PLUSS
-      plus.addEventListener('click', (e) => {
-        e.stopPropagation();
-        qty++;
-        cartState[productId] = qty;
-        number.textContent = qty;
-        updateCartBadge();
-      });
+      activateButton(btn, productId, 1);
     });
   });
 }
@@ -244,12 +285,16 @@ function initComingSoonPopup() {
 // 5. INIT VED LOAD
 // ===============================
 document.addEventListener('DOMContentLoaded', () => {
-  // Start med å gjemme badget
-  if (cartCountEl) {
-    cartCountEl.style.display = 'none';
-  }
+  // 1) Les inn handlekurv fra localStorage
+  loadCartState();
 
+  // 2) Oppdater badgen basert på eksisterende cartState
+  updateCartBadge(); // skjuler automatisk hvis tom
+
+  // 3) Init knapper med evt. tidligere antall
   initProductButtons();
+
+  // 4) Newsletter + coming soon
   initNewsletterPopup();
   initComingSoonPopup();
 });

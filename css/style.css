@@ -201,6 +201,59 @@ a {
   padding-bottom: 32px;
 }
 
+.comingsoon-popup {
+  position: fixed;
+  left: 50%;
+  bottom: 300px; 
+  transform: translateX(-50%);
+  background: #F7F2DE; 
+  border: 1px solid #E1EAF0; 
+  border-radius: 4px;
+  padding: 40px 40px;
+  width: 480px;        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  color: #0B0A08;        
+  font-family: 'Arimo', sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.comingsoon-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.comingsoon-text {
+  margin: 0 0 28px;
+  font-size: 20px;  
+  line-height: 1.5;
+}
+
+
+.comingsoon-close {
+  border: none;
+  outline: none;
+
+  padding: 12px 32px;        
+  border-radius: 999px;
+
+  background: #DC4131; 
+  color: #FFFFFF;
+  font-size: 16px;           
+  cursor: pointer;
+  letter-spacing: 0.03em;   
+}
+
+.comingsoon-close:hover {
+  background: #AE2E21;       
+}
+
 .logo {
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 300;
@@ -249,11 +302,12 @@ a {
   border-radius: 999px;
   border: 2px solid var(--green);
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
-  display: inline-flex;
+  display: none; /* samme som products-siden */
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
+
 
 
 /* ========================================
@@ -585,7 +639,7 @@ a {
   border-radius: 16px;
 }
 
-/* ADD TO BASKET-btn */
+/* --- ADD TO BASKET KNAPP --- */
 .add-btn {
   position: absolute;
   right: 16px;
@@ -606,8 +660,53 @@ a {
 }
 
 .add-btn:hover {
-  opacity: 0.4;
   transform: translateY(-1px);
+}
+
+.add-btn.active {
+  height: 38px;
+  width: 152px;
+  border-radius: 44px;
+  background: #ffffff;
+  color: #0b0a08;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inni kontrollknappen */
+.qty-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.qty-btn {
+  background: none;        
+  border: none;             
+  padding: 0 6px;              
+  color: #0b0a08;           
+  font-size: 18px;   
+  font-weight: 400;       
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  opacity: 0.6;             
+}
+
+.qty-number {
+  font-size: 16px;
+  font-weight: 400;
+  min-width: 14px;
+  text-align: center;
 }
 
 .product-price {

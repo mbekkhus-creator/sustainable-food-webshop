@@ -62,7 +62,7 @@ aria-modal="true">
 
     <!-- Checkout nederst -->
     <div class="menu-footer">
-      <a href="checkout.html">CHECKOUT</a>
+      <a href="checkout.html" id="checkoutLink">CHECKOUT</a>
     </div>
   </div>
 </div>
@@ -164,7 +164,7 @@ aria-modal="true">
     <article class="product-card">
       <div class="product-media">
         <img src="images/OATS.png" alt="Oats">
-        <button class="add-btn" aria-label="Add Oats to basket">
+        <button class="add-btn" data-product="oats" aria-label="Add Oats to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -182,7 +182,7 @@ aria-modal="true">
     <article class="product-card">
       <div class="product-media">
         <img src="images/REDONIONS.png" alt="Red Onions">
-        <button class="add-btn" aria-label="Add Red Onions to basket">
+        <button class="add-btn" data-product="redonions"aria-label="Add Red Onions to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -200,7 +200,7 @@ aria-modal="true">
     <article class="product-card">
       <div class="product-media">
         <img src="images/GARLIC.png" alt="Garlic">
-        <button class="add-btn" aria-label="Add Garlic to basket">
+        <button class="add-btn" data-product="garlic" aria-label="Add Garlic to basket">
           Add to basket
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 21V3 M5 10l7-7 7 7" />
@@ -272,6 +272,15 @@ aria-labelledby="newsletterPopupTitle">
     Got it!
   </button>
 </div>
+
+<!-- Coming soon popup -->
+<div class="comingsoon-popup" id="comingSoonPopup" aria-hidden="true">
+  <p class="comingsoon-text">
+    Checkout is coming soon! This feature is currently under construction.
+  </p>
+  <button type="button" class="comingsoon-close">Got it!</button>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
