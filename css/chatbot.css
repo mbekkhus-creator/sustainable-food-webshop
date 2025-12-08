@@ -311,14 +311,13 @@ body {
 }
 
 .chatbot-message.bot {
-  max-width: 249px;
+  max-width: 353px;
   background: var(--bg-primary); 
 }
 
 .chatbot-message.user {
   max-width: 353px;
-  background: var(--light-blue);
-  align-self: auto;           
+  background: var(--light-blue);        
 }
 
 .chatbot-row {
@@ -341,25 +340,26 @@ body {
 }
 
 .chatbot-input-row {
-  position: static;
   display: flex;
   gap: 12px;
   align-items: flex-end;
   margin-top: 24px;
-
+  width: 100%
 }
 
 .chatbot-input-bubble {
-  flex: 1;                    
+  width: 100%;
+  min-width: 85%;                 
+  max-height: 69px; 
   background: var(--light-blue); 
   padding: 10px 12px;
   border-radius: 18px;        
-  box-sizing: border-box;
-  min-width: 0;               
+  box-sizing: border-box;              
 }
 
 .chatbot-input-bubble textarea {
-  width: 100%;
+   width: 100%;
+  min-width: 100%;
   border: none;
   background: transparent;
   resize: none;   
@@ -498,12 +498,6 @@ body {
   .chatbot-message.user {
     width: 55%;
     max-width: 100%;
-  }
-
-  .chatbot-send {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
   }
 }
 
