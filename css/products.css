@@ -1,11 +1,13 @@
 :root {
   --bg-primary: #f7f2de;
   --bg-white: #ffffff;
-  --border-light: #e0e0e0;
   --red: #dc4131;
   --red-hover: #ae2e21;
   --green: #008f51;
   --text-dark: #0b0a08;
+  --boarder-light: #e1eaf0;
+  --opacity-text: #1b1a1ecc; /* 80% opacity */
+  --light-blue: #d2e8f9;
 }
 
 .visually-hidden {
@@ -25,8 +27,8 @@
   left: -999px;
   top: 0;
   padding: 8px 12px;
-  background: black;
-  color: white;
+  background: var(--text-dark);
+  color: var(--bg-white);
   z-index: 1000;
 }
 
@@ -41,8 +43,8 @@
 .site-header {
   width: 100%;
   height: 68px;
-  background: #f7f2de;
-  border-bottom: 1px solid #0b0a08;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--text-dark);
   display: flex;
   align-items: center;
   position: sticky;   
@@ -84,7 +86,7 @@
 .hamburger span {
   width: 100%;
   height: 2px;
-  background: #0b0a08;
+  background: var(--text-dark);
   border-radius: 2px;
 }
 
@@ -97,8 +99,8 @@
   width: 390px;
   height: 844px;
 
-  background: #008f51;
-  color: #0b0a08;
+  background: var(--green);
+  color: var(--text-dark);
   border-radius: 0 0 12px 12px;  
   
   display: none;
@@ -120,7 +122,7 @@
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
-  color: #0b0a08;
+  color: var(--text-dark);
 }
 
 /* Innhold */
@@ -137,7 +139,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  border-bottom: 1px solid #0b0a08;
+  border-bottom: 1px solid var(--text-dark);
 }
 
 .menu-logo {
@@ -164,7 +166,7 @@
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #0b0a08;
+  color: var(--text-dark);
 }
 
 /* Checkout nederst */
@@ -180,8 +182,8 @@
   bottom: 300px; 
   transform: translateX(-50%);
 
-  background: #F7F2DE; 
-  border: 1px solid #E1EAF0; 
+  background: var(--bg-primary); 
+  border: 1px solid var(--boarder-light); 
   border-radius: 4px;
 
   padding: 40px 40px;
@@ -194,7 +196,7 @@
 
   box-shadow: 0 16px 40px rgba(0,0,0,0.15);
 
-  color: #0B0A08;        
+  color: var(--text-dark);        
   font-family: 'Arimo', sans-serif;
 
   opacity: 0;
@@ -222,15 +224,15 @@
   padding: 12px 32px;        
   border-radius: 999px;
 
-  background: #DC4131; 
-  color: #FFFFFF;
+  background: var(--red); 
+  color: var(--bg-white);
   font-size: 16px;           
   cursor: pointer;
   letter-spacing: 0.03em;   
 }
 
 .comingsoon-close:hover {
-  background: #AE2E21;       
+  background: var(--red-hover);       
 }
 
 
@@ -242,7 +244,7 @@
   font-size: 32px;
   line-height: 100%;
   text-transform: uppercase;
-  color: #0b0a08;
+  color: var(--text-dark);
   text-decoration: none;
   justify-self: center;
 }
@@ -253,7 +255,7 @@
   position: relative;
   width: 47px;
   height: 36px;
-  background: #008f51;
+  background: var(--green);
   border: none;
   border-radius: 50px;
   display: inline-flex;
@@ -279,10 +281,10 @@
   min-width: 18px;
   height: 18px;
   padding: 0 5px;
-  background: #ffffff;
-  color: #008f51;
+  background: var(--bg-white);
+  color: var(--green);
   border-radius: 999px;
-  border: 2px solid #008f51;
+  border: 2px solid var(--green);
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
   display: none;
   align-items: center;
@@ -296,8 +298,8 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: "Arimo", sans-serif;
-  color: #0b0a08;
-  background-color: #f7f2de;
+  color: var(--text-dark);
+  background-color: var(--bg-primary);
 }
 
 /* --- PRODUKTSIDE HEADER --- */
@@ -313,7 +315,7 @@ body {
   font-size: 36px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #0b0a08;
+  color: var(--text-dark);
   margin: 0;
   line-height: 1.2;
 }
@@ -322,7 +324,7 @@ body {
   font-family: "Arimo", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: #0b0a08;
+  color: var(--text-dark);
   line-height: 1.5;
   margin: 30px 0 0 0;
   max-width: 591px;
@@ -362,8 +364,8 @@ body {
   gap: 10px;
   padding: 10px 16px;
   min-height: 38px;
-  background: #0b0a08;
-  color: #ffffff;
+  background: var(--text-dark);
+  color: var(--bg-white);
   border: 0;
   border-radius: 44px;
   font-family: "Arimo", sans-serif;
@@ -380,8 +382,8 @@ body {
   height: 38px;
   width: 152px;
   border-radius: 44px;
-  background: #ffffff;
-  color: #0b0a08;
+  background: var(--bg-white);
+  color: var(--text-dark);
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -401,7 +403,7 @@ body {
   background: none;        
   border: none;             
   padding: 0 6px;              
-  color: #0b0a08;           
+  color: var(--text-dark);           
   font-size: 18px;   
   font-weight: 400;       
   line-height: 1;
@@ -425,7 +427,7 @@ body {
 
 /* --- BILDE COLLAGE --- */
 .image-collage {
-  background-color: #f7f2de;
+  background-color: var(--bg-primary);
   margin-top: 52px;
   padding: 0 43px;
 }
@@ -450,7 +452,7 @@ body {
   font-weight: 400;
   font-size: 24px;
   line-height: 1;
-  color: #0b0a08;
+  color: var(--text-dark);
   margin: 17px 0 0 0;
   padding-left: 24px;
   padding-right: 17px;
@@ -473,7 +475,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 1;
-  color: #1b1a1ecc; /* 80% opacity */
+  color: var(--opacity-text); /* 80% opacity */
   margin: 0;
 }
 
@@ -483,7 +485,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 1;
-  color: #0b0a08;
+  color: var(--text-dark);
   white-space: nowrap;
   word-break: keep-all;
   position: absolute;
@@ -494,8 +496,8 @@ body {
 /* --- SEE OUR PARTNERING FARMS --- */
 
 .farms {
-  background: #f7f2de;
-  border-top: 1px solid #0b0a08;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--text-dark);
   margin-top: 34px;
 }
 
@@ -525,7 +527,7 @@ body {
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
-  color: #0b0a08;
+  color: var(--text-dark);
   margin: 0;
   max-width: 377px;
 }
@@ -533,7 +535,7 @@ body {
 /* Høyre kolonne – kart */
 .farms-map-col {
   flex: 1;
-  border-left: 1px solid #0b0a08;
+  border-left: 1px solid var(--text-dark);
   padding-left: 90px;
   display: flex;
   align-items: center;
@@ -568,12 +570,12 @@ body {
   font-size: 48px;
   line-height: 100%;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--bg-white);
   margin: 0;
 }
 
 .footer-topline {
-  background: #dc4131;
+  background: var(--red);
   height: 113px;
   position: relative;
   width: 100vw;                     
@@ -587,13 +589,13 @@ body {
   right: 0;
   bottom: 0;
   height: 1px;
-  background: #fff;
+  background: var(--bg-white);
 }
 
 /* FOOTER */
 .site-footer {
-  background: #dc4131;
-  color: #fff;
+  background: var(--red);
+  color: var(--bg-white);
   padding: 63px 43px 80px;
 }
 
@@ -677,7 +679,7 @@ body {
 .footer-submit svg {
   width: 24px;
   height: 24px;
-  stroke: #0b0a08; 
+  stroke: var(--text-dark); 
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -693,8 +695,8 @@ body {
   bottom: 300px; 
   transform: translateX(-50%);
 
-  background: #F7F2DE; 
-  border: 1px solid #E1EAF0; 
+  background: var(--bg-primary); 
+  border: 1px solid var(--boarder-light); 
   border-radius: 4px;
 
   padding: 40px 40px;
@@ -707,7 +709,7 @@ body {
 
   box-shadow: 0 16px 40px rgba(0,0,0,0.15);
 
-  color: #0B0A08;        
+  color: var(--text-dark);        
   font-family: 'Arimo', sans-serif;
 
   opacity: 0;
@@ -737,15 +739,15 @@ body {
   padding: 12px 32px;
   border-radius: 999px;
 
-  background: #DC4131; 
-  color: #FFFFFF;
+  background: var(--red); 
+  color: var(--bg-white);
   font-size: 16px;
   cursor: pointer;
   letter-spacing: 0.03em;
 }
 
 .newsletter-popup-close:hover {
-  background: #AE2E21; 
+  background: var(--red-hover); 
 }
 /* DENNE ER NY */
 
@@ -861,8 +863,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #0B0A08;     
-  border-bottom: 1px solid #0B0A08;  
+  border-top: 1px solid var(--text-dark);     
+  border-bottom: 1px solid var(--text-dark);  
   box-sizing: border-box;
   padding: 45px 0px;       
 }
@@ -986,8 +988,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid #0B0A08;      
-    border-bottom: 1px solid #0B0A08;   
+    border-top: 1px solid var(--text-dark);      
+    border-bottom: 1px solid var(--text-dark);   
     padding: 70px 0px;
     box-sizing: border-box;
   }
