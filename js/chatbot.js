@@ -1,4 +1,6 @@
-// === CHATBOT ELEMENTS ===
+// ===============================
+//  CHATBOT FUNCTIONALITY
+// ===============================
 const messagesEl = document.getElementById("chatbot-messages");
 const inputEl = document.getElementById("chat-input");
 const sendBtn = document.getElementById("chat-send-btn");
@@ -13,18 +15,18 @@ if (!messagesEl || !inputEl || !sendBtn) {
     const distanceFromBottom =
       messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight;
 
-    // Disable auto-scroll if user scrolls up
+    // DISABLE auto-scroll if user scrolls up
     shouldAutoScroll = distanceFromBottom < 10;
   });
 
-  // Auto-resize textarea
+  // AUTOSIZE TEXTAREA
   function autosizeTextarea() {
     inputEl.style.height = "auto";
     inputEl.style.height = inputEl.scrollHeight + "px";
   }
   inputEl.addEventListener("input", autosizeTextarea);
 
-  // User message (blue bubble)
+  // USER MESSAGE
   function addUserMessage(text) {
     const row = document.createElement("div");
     row.className = "chatbot-row user-row";
@@ -41,7 +43,7 @@ if (!messagesEl || !inputEl || !sendBtn) {
     }
   }
 
-  // FRAM "typing..." bubble
+  // FRAM "typing..." BUBBLE
   function showTypingIndicator() {
     isTyping = true;
     sendBtn.classList.add("is-cancel");
@@ -77,7 +79,7 @@ if (!messagesEl || !inputEl || !sendBtn) {
     if (typingRow) typingRow.remove();
   }
 
-  // Bot message
+  // BOT MESSAGE
   function addBotMessage(text) {
     const row = document.createElement("div");
     row.className = "chatbot-row bot-row";
@@ -99,9 +101,8 @@ if (!messagesEl || !inputEl || !sendBtn) {
     }
   }
 
-  // === AI CALL TO OPENAI ===
+  // AI CALL TO OPENAI 
   async function getAIResponse(userQuestion) {
-    // Product info from products.html and How FRAM works
 const framKnowledge = `
 You are FRAM, an AI assistant for a sustainable Norwegian food delivery service.
 
@@ -159,7 +160,7 @@ ${userQuestion}
 `;
 
 
-    //  Check API key
+    //  CHECK FOR API KEY
     if (!window.OPENAI_API_KEY) {
       return "FRAM AI is missing an API key and cannot respond right now.";
     }
@@ -179,14 +180,14 @@ ${userQuestion}
 
       let data;
 
-      // try parsing JSON separately
+      // TRY PARSING JSON
       try {
         data = await response.json();
       } catch {
         return "FRAM AI received an invalid response from the server.";
       }
 
-      // check HTTP status
+      // CHECK FOR ERRORS
       if (!response.ok) {
         console.error("API error:", response.status, data);
         return `FRAM AI encountered a server error (code: ${response.status}).`;
@@ -204,10 +205,9 @@ ${userQuestion}
     }
   }
 
-  // Send button click
+  // SEND BUTTON CLICK
   sendBtn.addEventListener("click", async () => {
     if (isTyping) {
-      // cancel typing state
       hideTypingIndicator();
       return;
     }
@@ -215,23 +215,23 @@ ${userQuestion}
     const text = inputEl.value.trim();
     if (!text) return;
 
-    // 1) show user message
+    // 1) SHOW USER MESSAGE
     addUserMessage(text);
     inputEl.value = "";
     autosizeTextarea();
 
-    // 2) show "FRAM is typing..."
+    // 2) SHOW "FRAM is typing..."
     showTypingIndicator();
 
-    // 3) get AI response
+    // 3) GET AI RESPONSE
     const aiResponse = await getAIResponse(text);
 
-    // 4) remove typing indicator and show response
+    // 4) REMOVE TYPING INDICATOR + SHOW AI RESPONSE
     hideTypingIndicator();
     addBotMessage(aiResponse);
   });
 
-  // Send on Enter (Shift+Enter = newline)
+  // SEND ON ENTER (Shift+Enter = newline)
   inputEl.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();

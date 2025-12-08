@@ -1,3 +1,7 @@
+/* ========================================
+   GLOBAL / VARIABLES / BASE
+   ======================================== */
+
 :root {
   --bg-primary: #f7f2de;
   --bg-white: #ffffff;
@@ -6,7 +10,8 @@
   --green: #008f51;
   --text-dark: #0b0a08;
   --boarder-light: #e1eaf0;
-  --opacity-text: #1b1a1ecc; /* 80% opacity */
+  --opacity-text: #1b1a1ecc;
+  /* 80% opacity */
   --light-blue: #d2e8f9;
 }
 
@@ -37,7 +42,9 @@
   top: 16px;
 }
 
-
+/* ========================================
+   HEADER / NAV - DESKTOP
+   ======================================== */
 
 /* --- HEADER --- */
 .site-header {
@@ -47,8 +54,8 @@
   border-bottom: 1px solid var(--text-dark);
   display: flex;
   align-items: center;
-  position: sticky;   
-  top: 0;             
+  position: sticky;
+  top: 0;
   z-index: 10000;
 }
 
@@ -90,19 +97,19 @@
   border-radius: 2px;
 }
 
-/* Popup-container */
+/* MENU POPUP */
 .menu-overlay {
   position: fixed;
-  top: 0px;                 
+  top: 0px;
   left: 0px;
-  
+
   width: 390px;
   height: 844px;
 
   background: var(--green);
   color: var(--text-dark);
-  border-radius: 0 0 12px 12px;  
-  
+  border-radius: 0 0 12px 12px;
+
   display: none;
   z-index: 99999;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
@@ -112,7 +119,6 @@
   display: block;
 }
 
-/* X-knapp */
 .menu-close {
   position: absolute;
   top: 16px;
@@ -125,7 +131,6 @@
   color: var(--text-dark);
 }
 
-/* Innhold */
 .menu-inner {
   width: 100%;
   height: 100%;
@@ -133,7 +138,6 @@
   flex-direction: column;
 }
 
-/* Topplinje */
 .menu-bar {
   height: 68px;
   display: flex;
@@ -150,7 +154,6 @@
   display: none;
 }
 
-/* Lenker */
 .menu-nav {
   flex: 1;
   display: flex;
@@ -169,34 +172,34 @@
   color: var(--text-dark);
 }
 
-/* Checkout nederst */
 .menu-footer {
   display: flex;
   justify-content: center;
   padding-bottom: 32px;
 }
 
+/* CHECKOUT POPUP */
 .comingsoon-popup {
   position: fixed;
   left: 50%;
-  bottom: 300px; 
+  bottom: 300px;
   transform: translateX(-50%);
 
-  background: var(--bg-primary); 
-  border: 1px solid var(--boarder-light); 
+  background: var(--bg-primary);
+  border: 1px solid var(--boarder-light);
   border-radius: 4px;
 
   padding: 40px 40px;
-  width: 400px;        
+  width: 400px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 
-  color: var(--text-dark);        
+  color: var(--text-dark);
   font-family: 'Arimo', sans-serif;
 
   opacity: 0;
@@ -207,12 +210,12 @@
 .comingsoon-popup.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(-10px); 
+  transform: translateX(-50%) translateY(-10px);
 }
 
 .comingsoon-text {
   margin: 0 0 28px;
-  font-size: 20px;  
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -221,23 +224,21 @@
   border: none;
   outline: none;
 
-  padding: 12px 32px;        
+  padding: 12px 32px;
   border-radius: 999px;
 
-  background: var(--red); 
+  background: var(--red);
   color: var(--bg-white);
-  font-size: 16px;           
+  font-size: 16px;
   cursor: pointer;
-  letter-spacing: 0.03em;   
+  letter-spacing: 0.03em;
 }
 
 .comingsoon-close:hover {
-  background: var(--red-hover);       
+  background: var(--red-hover);
 }
 
-
-
-/* --- LOGO --- */
+/* LOGO */
 .logo {
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 300;
@@ -249,7 +250,7 @@
   justify-self: center;
 }
 
-/* --- HANDLEKURV --- */
+/* CART */
 .cart-btn {
   justify-self: end;
   position: relative;
@@ -292,7 +293,7 @@
   box-sizing: border-box;
 }
 
-/* --- BODY --- */
+/* BODY */
 body {
   width: 100%;
   margin: 0 auto;
@@ -302,7 +303,7 @@ body {
   background-color: var(--bg-primary);
 }
 
-/* --- PRODUKTSIDE HEADER --- */
+/* HEADER */
 .products-header {
   max-width: 1512px;
   margin: 0 auto;
@@ -330,7 +331,10 @@ body {
   max-width: 591px;
 }
 
-/* --- PRODUKTKORT --- */
+/* ========================================
+   PRODUCT CARDS - DESKTOP
+   ======================================== */
+
 .product-card {
   width: 454px;
   display: flex;
@@ -354,7 +358,7 @@ body {
   border-radius: 16px;
 }
 
-/* --- ADD TO BASKET KNAPP --- */
+/* ADD TO BASKET BUTTON */
 .add-btn {
   position: absolute;
   right: 16px;
@@ -390,7 +394,7 @@ body {
   align-items: center;
 }
 
-/* Inni kontrollknappen */
+/* BUTTON COUNT */
 .qty-control {
   width: 100%;
   display: flex;
@@ -400,12 +404,12 @@ body {
 }
 
 .qty-btn {
-  background: none;        
-  border: none;             
-  padding: 0 6px;              
-  color: var(--text-dark);           
-  font-size: 18px;   
-  font-weight: 400;       
+  background: none;
+  border: none;
+  padding: 0 6px;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -414,7 +418,7 @@ body {
 }
 
 .qty-btn:hover {
-  opacity: 0.6;             
+  opacity: 0.6;
 }
 
 .qty-number {
@@ -425,7 +429,7 @@ body {
 }
 
 
-/* --- BILDE COLLAGE --- */
+/* IMAGES */
 .image-collage {
   background-color: var(--bg-primary);
   margin-top: 52px;
@@ -446,7 +450,7 @@ body {
   position: relative;
 }
 
-/* Produktnavn */
+/* PRODUCT NAME */
 .product-name {
   font-family: "Arimo", sans-serif;
   font-weight: 400;
@@ -458,7 +462,7 @@ body {
   padding-right: 17px;
 }
 
-/* Pris og vekt ligger i product-info-container */
+/* PRODUCT INFO */
 .product-info {
   display: flex;
   justify-content: space-between;
@@ -469,17 +473,18 @@ body {
   margin-top: 12px;
 }
 
-/* Vekt */
+/* WEIGHT */
 .product-weight {
   font-family: "Arimo", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1;
-  color: var(--opacity-text); /* 80% opacity */
+  color: var(--opacity-text);
+  /* 80% opacity */
   margin: 0;
 }
 
-/* Pris */
+/* PRICE */
 .product-price {
   font-family: "Arimo", sans-serif;
   font-weight: 400;
@@ -493,7 +498,9 @@ body {
   right: 24px;
 }
 
-/* --- SEE OUR PARTNERING FARMS --- */
+/* ========================================
+   SE OUR PARTNERING FARMS - DESKTOP
+   ======================================== */
 
 .farms {
   background: var(--bg-primary);
@@ -512,7 +519,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Venstre kolonne – 507px bred på desktop */
+/* TEXT */
 .farms-left {
   width: 507px;
   display: flex;
@@ -532,7 +539,7 @@ body {
   max-width: 377px;
 }
 
-/* Høyre kolonne – kart */
+/* MAP */
 .farms-map-col {
   flex: 1;
   border-left: 1px solid var(--text-dark);
@@ -542,7 +549,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Kartboks */
 .farms-map {
   width: 745px;
   height: 478px;
@@ -557,14 +563,16 @@ body {
   display: block;
 }
 
-/* TOPPLINJE FOOTER */
+/* ========================================
+   FOOTER - DESKTOP
+   ======================================== */
 
 .footer-topline .footer-logo {
   position: absolute;
   left: 45px;
   top: 41px;
   width: 122px;
-  height: 62px; 
+  height: 62px;
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 300;
   font-size: 48px;
@@ -578,10 +586,9 @@ body {
   background: var(--red);
   height: 113px;
   position: relative;
-  width: 100vw;                     
+  width: 100vw;
 }
 
-/* HVIT LINJE I FOOTER */
 .footer-topline::after {
   content: "";
   position: absolute;
@@ -592,7 +599,6 @@ body {
   background: var(--bg-white);
 }
 
-/* FOOTER */
 .site-footer {
   background: var(--red);
   color: var(--bg-white);
@@ -622,11 +628,11 @@ body {
 .footer-text {
   font-family: "Frank Ruhl Libre", serif;
   font-size: 20px;
-  margin: 0 0 70px 0; 
+  margin: 0 0 70px 0;
   max-width: 300px;
 }
 
-/* SKJEMA */
+/* FORM */
 .footer-form {
   display: flex;
   flex-direction: column;
@@ -675,41 +681,40 @@ body {
   cursor: pointer;
 }
 
-/* SORT PIL */
 .footer-submit svg {
   width: 24px;
   height: 24px;
-  stroke: var(--text-dark); 
+  stroke: var(--text-dark);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .footer-submit:hover svg {
   opacity: 0.6;
-  transform: translateX(2px); 
+  transform: translateX(2px);
 }
 
-/* Popup container */ /* DENNE ER NY */
+/* NEWSLETTER POPUP */
 .newsletter-popup {
   position: fixed;
   left: 50%;
-  bottom: 300px; 
+  bottom: 300px;
   transform: translateX(-50%);
 
-  background: var(--bg-primary); 
-  border: 1px solid var(--boarder-light); 
+  background: var(--bg-primary);
+  border: 1px solid var(--boarder-light);
   border-radius: 4px;
 
   padding: 40px 40px;
-  width: 400px;        
+  width: 400px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 
-  color: var(--text-dark);        
+  color: var(--text-dark);
   font-family: 'Arimo', sans-serif;
 
   opacity: 0;
@@ -717,21 +722,18 @@ body {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Når synlig */
 .newsletter-popup.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(-10px); 
+  transform: translateX(-50%) translateY(-10px);
 }
 
-/* Tekst */
 .newsletter-popup-text {
   margin: 0 0 28px;
   font-size: 20px;
   line-height: 1.5;
 }
 
-/* Knapp */
 .newsletter-popup-close {
   border: none;
   outline: none;
@@ -739,7 +741,7 @@ body {
   padding: 12px 32px;
   border-radius: 999px;
 
-  background: var(--red); 
+  background: var(--red);
   color: var(--bg-white);
   font-size: 16px;
   cursor: pointer;
@@ -747,14 +749,16 @@ body {
 }
 
 .newsletter-popup-close:hover {
-  background: var(--red-hover); 
+  background: var(--red-hover);
 }
-/* DENNE ER NY */
 
-/* 📱 MOBIL – 0–768px */
+/* ========================================
+   MOBILE 0–768px
+   ======================================== */
+
 @media (max-width: 768px) {
 
-  /* --- HEADER --- */
+  /* --- HEADER / NAV - MOBILE --- */
   .header-inner {
     padding: 0 16px;
   }
@@ -763,10 +767,10 @@ body {
     margin-right: 16px;
   }
 
-  /* --- MENY / OVERLAY --- */
+  /* POPUP MENU */
   .menu-overlay {
     top: 0;
-    left: 0;              
+    left: 0;
     width: 100%;
     height: 100vh;
     max-width: none;
@@ -780,7 +784,7 @@ body {
   }
 
   .menu-logo {
-    display: block;      
+    display: block;
   }
 
   .menu-nav {
@@ -792,7 +796,7 @@ body {
     font-size: 20px;
   }
 
-  /* --- PRODUCE SECTION --- */
+  /* --- PRODUCT CARD - MOBILE --- */
   .products-header {
     padding-left: 21px;
     padding-right: 21px;
@@ -810,7 +814,7 @@ body {
     font-size: 18px;
   }
 
-  /* --- PRODUKTKORT / BILDER --- */
+  /* IMAGES */
   .image-collage {
     padding-left: 21px;
     padding-right: 21px;
@@ -841,60 +845,60 @@ body {
   }
 
   /* --- PARTNERING FARMS – MOBIL --- */
-.farms {
-  margin-top: 45px;       
-  margin-bottom: 45px;    
-  border: none;           
-  padding: 0;
-}
+  .farms {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border: none;
+    padding: 0;
+  }
 
-.farms-inner {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;            
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  box-sizing: border-box;
-}
+  .farms-inner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    box-sizing: border-box;
+  }
 
-.farms-left {
-  width: 100%;            
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid var(--text-dark);     
-  border-bottom: 1px solid var(--text-dark);  
-  box-sizing: border-box;
-  padding: 45px 0px;       
-}
+  .farms-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--text-dark);
+    border-bottom: 1px solid var(--text-dark);
+    box-sizing: border-box;
+    padding: 45px 0px;
+  }
 
-.farms-title {
-  font-size: 24px;
-  max-width: 304px;
-  text-align: center;
-  padding: 45px 0px;               
-}
+  .farms-title {
+    font-size: 24px;
+    max-width: 304px;
+    text-align: center;
+    padding: 45px 0px;
+  }
 
-.farms-map-col {
-  border-left: none;
-  padding: 45px 45px 45px 45px;  
-  display: block;
-}
+  .farms-map-col {
+    border-left: none;
+    padding: 45px 45px 45px 45px;
+    display: block;
+  }
 
-.farms-map {
-  width: 100%;
-  max-width: 340px;
-  height: 459px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-}
+  .farms-map {
+    width: 100%;
+    max-width: 340px;
+    height: 459px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
 
-.farms-map iframe {
-  width: 100%;
-  height: 100%;
-}
+  .farms-map iframe {
+    width: 100%;
+    height: 100%;
+  }
 
   /* --- FOOTER – MOBIL --- */
   .site-footer {
@@ -908,12 +912,12 @@ body {
     gap: 32px;
   }
 
- .footer-title {
+  .footer-title {
     font-size: 24px;
     margin-top: 63px;
   }
 
-   .footer-text {
+  .footer-text {
     font-size: 16px;
     margin-top: 44px;
     max-width: 279px;
@@ -932,25 +936,27 @@ body {
   }
 }
 
+/* ========================================
+   TABLET 769–1400px
+   ======================================== */
 
-/* 💻 MELLOMSTORE SKJERMER – 769–1400px */
 @media (min-width: 769px) and (max-width: 1400px) {
 
-  /* --- MENY / OVERLAY --- */
+  /* POPUP MENU */
   .menu-overlay {
     top: 0;
-    left: 0;              
+    left: 0;
     width: 390px;
     height: 844px;
     border-radius: 0 0 12px 12px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.25);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
   }
 
   .menu-logo {
-    display: none;       
+    display: none;
   }
 
-  /* --- PRODUKTER / COLLAGE --- */
+  /* PRODUCT CARD */
   .collage-grid {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 52px;
@@ -964,7 +970,7 @@ body {
     max-width: 454px;
   }
 
-  /* --- PARTNERING FARMS – TABLET / MELLOMSTORE --- */
+  /* --- PARTNERING FARMS – TABLET --- */
   .farms {
     margin-top: 45px;
     margin-bottom: 45px;
@@ -988,8 +994,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid var(--text-dark);      
-    border-bottom: 1px solid var(--text-dark);   
+    border-top: 1px solid var(--text-dark);
+    border-bottom: 1px solid var(--text-dark);
     padding: 70px 0px;
     box-sizing: border-box;
   }
@@ -1025,7 +1031,7 @@ body {
     height: 100%;
   }
 
-  /* --- FOOTER – mellomstor kan være litt løsere --- */
+  /* --- FOOTER - TABLET --- */
   .footer-inner {
     max-width: 1512px;
     margin: 0 auto;
@@ -1035,4 +1041,3 @@ body {
     gap: 32px;
   }
 }
-
