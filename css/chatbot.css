@@ -21,7 +21,7 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
@@ -291,7 +291,6 @@ body {
   line-height: 1.2;
   padding: 16px 16px;
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .chatbot-messages {
@@ -380,7 +379,6 @@ body {
   display: none;
   font-size: 18px;
   color: var(--bg-white);
-  align-self: right;
 }
 
 .chatbot-send.is-cancel .icon-arrow {
