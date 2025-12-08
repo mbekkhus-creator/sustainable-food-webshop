@@ -239,3 +239,76 @@ ${userQuestion}
     }
   });
 }
+
+// ===============================
+//  CHECKOUT "COMING SOON" POPUP 
+// ===============================
+function initComingSoonPopup() {
+  const cartBtn = document.querySelector('.cart-btn');
+  const checkoutLink = document.getElementById('checkoutLink');
+  const comingSoon = document.getElementById('comingSoonPopup');
+  const comingSoonClose = document.querySelector('.comingsoon-close');
+
+  if (!comingSoon) return; 
+
+  function openComingSoon() {
+    
+    if (typeof closeMenu === 'function') {
+      closeMenu();
+    }
+    comingSoon.classList.add('is-visible');
+    comingSoon.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeComingSoon() {
+    comingSoon.classList.remove('is-visible');
+    comingSoon.setAttribute('aria-hidden', 'true');
+  }
+
+  // OPEN FRON CHECKOUT LINK IN MENU
+  if (checkoutLink) {
+    checkoutLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openComingSoon();
+    });
+  }
+
+  // OPEN FROM CART BUTTON (GREEN)
+  if (cartBtn) {
+    cartBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openComingSoon();
+    });
+  }
+
+  // CLOSE BY "GOT IT!"
+  if (comingSoonClose) {
+    comingSoonClose.addEventListener('click', () => {
+      closeComingSoon();
+    });
+  }
+
+  // CLICK OUTSIDE TO CLOSE
+  document.addEventListener('click', (event) => {
+    if (!comingSoon.classList.contains('is-visible')) return;
+
+    if (comingSoon.contains(event.target)) return;
+
+    if (checkoutLink && event.target === checkoutLink) return;
+    if (cartBtn && (event.target === cartBtn || cartBtn.contains(event.target))) return;
+
+    closeComingSoon();
+  });
+
+  // CLOSE WITH ESC
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && comingSoon.classList.contains('is-visible')) {
+      closeComingSoon();
+    }
+  });
+}
+
+// RUN WHEN PAGE IS LOADED
+document.addEventListener('DOMContentLoaded', () => {
+  initComingSoonPopup();
+});

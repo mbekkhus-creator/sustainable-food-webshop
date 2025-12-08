@@ -283,9 +283,9 @@
   height: 18px;
   padding: 0 5px;
   background: var(--bg-white);
-  color: var(--green);
+  color: var(--text-dark);
   border-radius: 999px;
-  border: 2px solid var(--green);
+  border: 1px solid var(--text-dark);
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
   display: none;
   align-items: center;

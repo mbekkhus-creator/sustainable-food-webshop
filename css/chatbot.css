@@ -176,6 +176,64 @@
   justify-content: center;
   padding-bottom: 32px;
 }
+/* CHECKOUT POPUP */
+.comingsoon-popup {
+  position: fixed;
+  left: 50%;
+  bottom: 300px;
+  transform: translateX(-50%);
+
+  background: var(--bg-primary);
+  border: 1px solid var(--boarder-light);
+  border-radius: 4px;
+
+  padding: 40px 40px;
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+
+  color: var(--text-dark);
+  font-family: 'Arimo', sans-serif;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.comingsoon-popup.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.comingsoon-text {
+  margin: 0 0 28px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.comingsoon-close {
+  border: none;
+  outline: none;
+
+  padding: 12px 32px;
+  border-radius: 999px;
+
+  background: var(--red);
+  color: var(--bg-white);
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.comingsoon-close:hover {
+  background: var(--red-hover);
+}
 
 /* --- LOGO --- */
 .logo {
@@ -222,9 +280,9 @@
   height: 18px;
   padding: 0 5px;
   background: var(--bg-white);
-  color: var(--green);
+  color: var(--text-dark);
   border-radius: 999px;
-  border: 2px solid var(--green);
+  border: 1px solid var(--text-dark);
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
   display: inline-flex;
   align-items: center;
