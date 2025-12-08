@@ -31,7 +31,7 @@ This project includes an AI-powered chatbot using the OpenAI API.
 Inside the /js folder, create a new file named:
 js/config.js
 add the following code: 
-window.OPEN_API_KEY = "YOUR_API_KEY_HERE"
+window.OPENAI_API_KEY = "YOUR_API_KEY_HERE"
 replace "YOUR_API_KEY_HERE" with your personal OpenAI API key.
 
 2. API key protection (.gitignore)
