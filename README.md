@@ -26,10 +26,10 @@ The project consists of three main pages:
   - **Shop our seasonal selection** → links to `products.html`
   - **Ask us about anything** → links to `chatbot.html`
   - **“This is how it works”** section, explaining the service in 4 steps:
-  1. Order groceries
-  2. Stock up
-  3. Scan & reorder
-  4. Swap & reuse
+1. Order groceries
+2. Stock up
+3. Scan & reorder
+4. Swap & reuse
 
 - “Popular produce” section with product cards and **Add to basket** buttons
 
