@@ -346,9 +346,12 @@ body {
 }
 
 .chatbot-input-bubble {
-  flex: 1;
+  flex: 1;                    
   background: var(--light-blue); 
-  padding: 10px 10px;
+  padding: 10px 12px;
+  border-radius: 18px;        
+  box-sizing: border-box;
+  min-width: 0;               
 }
 
 .chatbot-input-bubble textarea {
@@ -373,6 +376,7 @@ body {
   display: none;
   font-size: 18px;
   color: var(--bg-white);
+  align-self: right;
 }
 
 .chatbot-send.is-cancel .icon-arrow {
