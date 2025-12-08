@@ -19,23 +19,25 @@ The solution is entirely client-side (no backend or database).
 The project consists of three main pages:
 
 ### `index.html` – Home
-
 - Hero section with FRAM logo and tagline:  
   _“HOME DELIVERY FROM YOUR LOCAL FARMS”_
+
 - Two feature cards:
   - **Shop our seasonal selection** → links to `products.html`
   - **Ask us about anything** → links to `chatbot.html`
-- **“This is how it works”** section, explaining the service in 4 steps:
+  - **“This is how it works”** section, explaining the service in 4 steps:
   1. Order groceries
   2. Stock up
   3. Scan & reorder
   4. Swap & reuse
+
 - “Popular produce” section with product cards and **Add to basket** buttons
+
 - Newsletter signup in the footer with a confirmation popup
 
 ### `products.html` – Products
-
 - Introduction text about FRAM’s seasonal produce
+
 - Product grid including:
   - Oats  
   - Red Onions  
@@ -47,11 +49,12 @@ The project consists of three main pages:
   - Weight
   - Price
   - “Add to basket” button
+
 - “See our partnering farms” section with an embedded **Google Maps** iframe showing a partner farm in Norway
 
 ### `chatbot.html` – Chatbot
-
 - Full-page AI chatbot interface branded as **FRAM**
+
 - Conversation log with:
   - Initial greeting from FRAM
   - Bot and user message bubbles
@@ -59,8 +62,7 @@ The project consists of three main pages:
 - Send button (click or Enter key)
 - Powered by the **OpenAI API** via `chatbot.js` and `config.js`
 
-All pages share:
-
+### All pages share:
 - Common header with logo
 - Mobile hamburger menu with overlay navigation
 - Cart icon with a dynamic cart counter
@@ -70,13 +72,11 @@ All pages share:
 ##  Features
 
 ### Webshop & Cart
-
 - Product cards on both the home page and the products page
 - “Add to basket” buttons update a shared cart counter in the header (`#cart-count`)
 - The **checkout link** opens a “coming soon” popup instead of a real checkout flow (no backend)
 
 ### AI Chatbot
-
 - Chatbot persona: **FRAM**, an assistant for a sustainable Norwegian food delivery service
 - Can answer questions about:
   - What FRAM is
@@ -91,13 +91,11 @@ All pages share:
   - Unexpected response shape from the API
 
 ### Partner Farms Map (Third-Party API)
-
 - Embedded **Google Maps** iframe on `products.html`
 - Shows a partner farm location in Norway
 - Demonstrates integration of a third-party map service
 
 ### Newsletter Popup
-
 - Newsletter form in the footer (`index.html` and `products.html`)
 - On submission, a confirmation dialog appears:
   - _“You’re in! Expect fresh updates from our partner farms in your inbox soon.”_
@@ -127,8 +125,7 @@ The project follows several WCAG 2.1 Level AA–inspired practices:
 - **Keyboard behavior**
   - ESC key closes dialogs (mobile menu + newsletter popup + coming soon popup)
 
-Planned but not yet implemented:
-
+### Planned but not yet implemented:
 - Focus trapping inside dialogs so keyboard focus cannot escape an open modal
 
 ---
@@ -151,15 +148,18 @@ Planned but not yet implemented:
 
 Fonts are loaded from **Google Fonts**: Frank Ruhl Libre & Arimo.
 
-## How to Run the Project
+---
+
+## Getting started 
+
+### How to Run the Project
 1. Clone the repository from GitHub
 2. Open the project folder in VS Code
 3. Run the page using Live Server
-   - Right-click on index.html -> "open with live server"
+  - Right-click on index.html -> "open with live server"
 The website will now run locally on your machine. 
 
-
-Setting Up the OpenAI API Key (Required for the Chatbot)
+### Setting Up the OpenAI API Key (Required for the Chatbot)
 This project includes an AI-powered chatbot using the OpenAI API.
 --> The API key is not included in the repository for security reasons.
 
@@ -183,13 +183,16 @@ After adding your API key;
  - Select "Open with Live Server"
 The chatbot will run locally using your OpenAI key. 
 
-🤖 AI Behaviour & Ethical Considerations
+---
+
+## AI Behaviour & Ethical Considerations
+
 The chatbot uses a prompt that describes:
 - What FRAM is
 - How FRAM works (order, stock up, scan & reorder, swap & reuse)
 - The current product catalog (Oats, Red Onions, Garlic, Potatoes, Carrots)
 
-The AI is instructed to:
+### The AI is instructed to:
 - Answer questions about:
   - FRAM’s service and steps
   - Product prices, weights and availability
@@ -198,13 +201,15 @@ The AI is instructed to:
 - Stay focused on FRAM, food, farms, delivery and sustainability topics
 - Respond briefly and clearly, and try to match the user’s language
 
-Ethical considerations:
+### Ethical considerations:
 - The model can generate incorrect or outdated information; users should not treat it as authoritative.
 - The frontend does not log or store user messages.
 - Users are not asked for sensitive personal information.
 - The chatbot is positioned as a helper, not a decision-maker.
 
-📍 Third-Party Integration (Map)
+---
+
+## Third-Party Integration (Map)
 
 The “SEE OUR PARTNERING FARMS” section on products.html embeds a Google Maps iframe:
 - Shows the location of a partner farm in Norway
@@ -213,9 +218,11 @@ The “SEE OUR PARTNERING FARMS” section on products.html embeds a Google Maps
 **Possible future improvement:**
 - Use the full JavaScript Maps API with multiple dynamic markers for several partner farms.
 
-📖 Usage Guide
+---
 
-Browsing & Shopping
+## Usage Guide
+
+### Browsing & Shopping
 1. Go to HOME or PRODUCTS.
 2. Scroll through the available products.
 3. Press “Add to basket” on any product:
@@ -223,7 +230,7 @@ Browsing & Shopping
 4. Click “CHECKOUT” in the menu:
   - A “Checkout is coming soon” dialog appears (no real payment flow yet).
 
-Chatbot
+### Chatbot
 1. Go to the CHAT page.
 2. Type a question into the text area, e.g.:
   - “How does FRAM work?”
@@ -231,37 +238,39 @@ Chatbot
 3. Press Enter or click the send button.
 4. FRAM shows a typing indicator, then replies in the conversation log.
 
-Newsletter Signup
+### Newsletter Signup
 1. Scroll to the footer on index.html or products.html.
 2. Optionally fill in your First name.
 3. Enter your E-mail address.
 4. Press the arrow button to submit.
 5. A popup confirms that you are signed up.
 
+---
 
-🧪 Development Process & Resources
+## Development Process & Resources
 
-Key focus areas during development:
+### Key focus areas during development:
 - Matching the provided Figma layout using flexbox and grid
 - Building a consistent header, mobile menu and footer across all pages
 - Implementing accessible modals and overlays using ARIA attributes
 - Integrating OpenAI and Google Maps on the client side without exposing secrets
 
-Resources used to solve problems and update knowledge:
-- **MDN Web Docs**
+### Resources used to solve problems and update knowledge:
+**MDN Web Docs**
   - HTML semantics
   - CSS Flexbox & Grid
   - aria-* attributes and accessibility
-- **WebAIM & WCAG 2.1 summaries**
+**WebAIM & WCAG 2.1 summaries**
   - Guidelines for headings, forms, keyboard navigation and dialogs
-- **OpenAI API documentation**
+**OpenAI API documentation**
   - Example requests
   - Error handling patterns for fetch + JSON
-- **Google Maps embed docs / examples**
+**Google Maps embed docs / examples**
   - Query parameters for embedded maps
 
+---
 
-  ⚠️ Known Issues / Limitations
+## Known Issues / Limitations
 
 - Checkout is not implemented – only a “Coming soon” popup.
 - Newsletter signup does not send real emails (no backend).
@@ -272,8 +281,9 @@ Resources used to solve problems and update knowledge:
   - A valid OpenAI API key
   - An active internet connection
 
+---
 
-🔮 Future Improvements
+## Future Improvements
 
 - Implement a proper checkout flow and order summary page.
 - Add product categories, filtering and sorting.
