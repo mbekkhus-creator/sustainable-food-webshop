@@ -1,5 +1,5 @@
 // ===============================
-// 1. MOBILMENY
+// MOBILMENU
 // ===============================
 const hamburger = document.querySelector('.hamburger');
 const menu = document.getElementById('mobileMenu');
@@ -29,22 +29,21 @@ if (closeBtn) {
   closeBtn.addEventListener('click', closeMenu);
 }
 
-// close on ESC key
+// CLOSE ON ESC KEY
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMenu();
 });
 
 
 // ===============================
-// 2. HANDLEKURV / PRODUKTKNAPPER
+// CART / PRODUCT BUTTONS
 // ===============================
 
 const CART_STORAGE_KEY = 'framCart';
 
-// Holder styr på antall per produkt, f.eks. { oats: 2, garlic: 1 }
 const cartState = {};
 
-// Last inn handlekurv fra localStorage
+// LOCALSTORAGE: LOAD CART STATE
 function loadCartState() {
   try {
     const stored = localStorage.getItem(CART_STORAGE_KEY);
@@ -58,7 +57,7 @@ function loadCartState() {
   }
 }
 
-// Lagre handlekurv til localStorage
+// LOCALSTORAGE: SAVE CART STATE
 function saveCartState() {
   try {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartState));
@@ -67,11 +66,11 @@ function saveCartState() {
   }
 }
 
-// Finn handlekurv-knappen og badget
+// CART BUTTON + BADGE
 const cartBtn = document.querySelector('.cart-btn');
 const cartCountEl = cartBtn ? cartBtn.querySelector('.cart-count') : null;
 
-// Oppdaterer tallet i handlekurv-badget
+// UPDATE CART BADGE
 function updateCartBadge() {
   if (!cartCountEl) return;
 
@@ -85,11 +84,11 @@ function updateCartBadge() {
     cartCountEl.textContent = total;
   }
 
-  // lagre hver gang noe endres
+  // SAVE TO LOCAL STORAGE
   saveCartState();
 }
 
-// Setter en knapp tilbake til "Add to basket"
+// RESET BUTTON TO "ADD TO BASKET" STATE
 function resetButton(btn) {
   btn.classList.remove('active');
   btn.innerHTML = `
@@ -100,7 +99,7 @@ function resetButton(btn) {
   `;
 }
 
-// Aktiverer én knapp i aktiv state (brukes både ved klikk og ved gjenoppretting fra localStorage)
+// ACTIVATE BUTTON TO SHOW QTY CONTROLS
 function activateButton(btn, productId, initialQty) {
   let qty = initialQty || 1;
   cartState[productId] = qty;
@@ -120,7 +119,7 @@ function activateButton(btn, productId, initialQty) {
 
   // MINUS
   minus.addEventListener('click', (e) => {
-    e.stopPropagation(); // ikke trigge parent-click
+    e.stopPropagation(); 
     qty = Math.max(0, qty - 1);
 
     if (qty === 0) {
@@ -134,7 +133,7 @@ function activateButton(btn, productId, initialQty) {
     updateCartBadge();
   });
 
-  // PLUSS
+  // PLUS
   plus.addEventListener('click', (e) => {
     e.stopPropagation();
     qty++;
@@ -146,7 +145,7 @@ function activateButton(btn, productId, initialQty) {
   updateCartBadge();
 }
 
-// Legger på logikk på alle .add-btn-knapper
+// INITIALIZE PRODUCT BUTTONS
 function initProductButtons() {
   const buttons = document.querySelectorAll('.add-btn');
 
@@ -156,12 +155,11 @@ function initProductButtons() {
 
     const existingQty = cartState[productId] || 0;
 
-    // Hvis produktet allerede ligger i handlekurven fra før, sett knapp rett i aktiv state
     if (existingQty > 0) {
       activateButton(btn, productId, existingQty);
     }
 
-    // Klikk når den er i "Add to basket"-state
+    // CLICK EVENT
     btn.addEventListener('click', () => {
       if (btn.classList.contains('active')) return;
       activateButton(btn, productId, 1);
@@ -171,7 +169,7 @@ function initProductButtons() {
 
 
 // ===============================
-// 3. COMING SOON POPUP
+// COMING SOON POPUP
 // ===============================
 function initComingSoonPopup() {
   const checkoutLink = document.getElementById('checkoutLink');
@@ -181,7 +179,6 @@ function initComingSoonPopup() {
   if (!comingSoon) return;
 
   function openComingSoon() {
-    // Lukk meny om den er åpen
     if (typeof closeMenu === 'function') {
       closeMenu();
     }
@@ -194,7 +191,7 @@ function initComingSoonPopup() {
     comingSoon.setAttribute('aria-hidden', 'true');
   }
 
-  // Åpne fra CHECKOUT-link i meny
+  // OPEN FROM CHECKOUT LINK IN MENU
   if (checkoutLink) {
     checkoutLink.addEventListener('click', function (e) {
       e.preventDefault();
@@ -202,7 +199,7 @@ function initComingSoonPopup() {
     });
   }
 
-  // Åpne fra handlekurv-knappen (grønn)
+  // OPEN FROM CART BUTTON (GREEN)
   if (cartBtn) {
     cartBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -210,28 +207,26 @@ function initComingSoonPopup() {
     });
   }
 
-  // Lukk med knapp
+  // CLOSE WITH BUTTON
   if (comingSoonClose) {
     comingSoonClose.addEventListener('click', function () {
       closeComingSoon();
     });
   }
 
-  // Klikk utenfor popup for å lukke
+  // CLICK OUTSIDE TO CLOSE
   document.addEventListener('click', function (event) {
     if (!comingSoon.classList.contains('is-visible')) return;
 
-    // Ikke lukk hvis vi klikker inni popupen
     if (comingSoon.contains(event.target)) return;
 
-    // Ikke lukk hvis vi klikker på checkout-lenka eller handlekurv-knappen
     if (checkoutLink && event.target === checkoutLink) return;
     if (cartBtn && (event.target === cartBtn || cartBtn.contains(event.target))) return;
 
     closeComingSoon();
   });
 
-  // Lukk COMING SOON med ESC
+  // CLOSE "COMING SOON" ON ESC KEY
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && comingSoon.classList.contains('is-visible')) {
       closeComingSoon();
@@ -239,27 +234,22 @@ function initComingSoonPopup() {
   });
 }
 
-
 // ===============================
-// 4. INIT CART, PRODUKTER, COMING SOON
+// INIT CART, PRODUKTER, COMING SOON
 // ===============================
 document.addEventListener('DOMContentLoaded', () => {
-  // 1) Les inn handlekurv fra localStorage
+ 
   loadCartState();
 
-  // 2) Oppdater badgen basert på eksisterende cartState
-  updateCartBadge(); // skjuler automatisk hvis tom
+  updateCartBadge(); 
 
-  // 3) Aktiver "Add to basket"-knapper med evt. tidligere antall
   initProductButtons();
 
-  // 4) Koble handlekurv + CHECKOUT-link til "Coming soon"-popup
   initComingSoonPopup();
 });
 
-
 // ===============================
-// 5. NEWSLETTER POPUP (egen, separat)
+// NEWSLETTER POPUP
 // ===============================
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.footer-form');
@@ -270,24 +260,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = popup.querySelector('.newsletter-popup-close');
   if (!closeBtn) return;
 
+  // OPEN POPUP ON FORM SUBMIT
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-
-    // show popup
     popup.classList.add('is-visible');
     popup.setAttribute('aria-hidden', 'false');
-
-    // empty form
     form.reset();
   });
 
-  // close on button click
+  // CLOSE ON BUTTON CLICK
   closeBtn.addEventListener('click', function () {
     popup.classList.remove('is-visible');
     popup.setAttribute('aria-hidden', 'true');
   });
 
-  // close on outside click
+  // CLOSE OUTSIDE CLICK
   document.addEventListener('click', function (event) {
     if (!popup.classList.contains('is-visible')) return;
     if (popup.contains(event.target)) return;
@@ -295,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
     popup.setAttribute('aria-hidden', 'true');
   });
 
-  // close on escape key
+  // CLOSE ON ESC KEY
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       popup.classList.remove('is-visible');

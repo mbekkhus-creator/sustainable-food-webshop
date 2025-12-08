@@ -1,5 +1,5 @@
 /* ========================================
-   0. GLOBAL / VARIABLES / BASE
+   GLOBAL / VARIABLES / BASE
    ======================================== */
 
 :root {
@@ -73,7 +73,7 @@ a {
 }
 
 /* ========================================
-   1. HEADER / NAV - DESKTOP
+   HEADER / NAV - DESKTOP
    ======================================== */
 
 .site-header {
@@ -84,8 +84,8 @@ a {
   display: flex;
   align-items: center;
   margin: 0;
-  position: sticky;   
-  top: 0;             
+  position: sticky;
+  top: 0;
   z-index: 10000;
 }
 
@@ -128,13 +128,13 @@ a {
 
 .menu-overlay {
   position: fixed;
-  top: 0;                
+  top: 0;
   left: 0;
   width: 390px;
   height: 844px;
   background: var(--green);
   color: var(--text-dark);
-  border-radius: 0 0 12px 12px;  
+  border-radius: 0 0 12px 12px;
   display: none;
   z-index: 99999;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
@@ -203,22 +203,23 @@ a {
   padding-bottom: 32px;
 }
 
+/* POP-UP – COMING SOON */
 .comingsoon-popup {
   position: fixed;
   left: 50%;
-  bottom: 300px; 
+  bottom: 300px;
   transform: translateX(-50%);
-  background: var(--bg-primary); 
-  border: 1px solid var(--boarder-light); 
+  background: var(--bg-primary);
+  border: 1px solid var(--boarder-light);
   border-radius: 4px;
   padding: 40px 40px;
-  width: 480px;        
+  width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
-  color: var(--text-dark);        
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  color: var(--text-dark);
   font-family: 'Arimo', sans-serif;
   opacity: 0;
   pointer-events: none;
@@ -228,34 +229,34 @@ a {
 .comingsoon-popup.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(-10px); 
+  transform: translateX(-50%) translateY(-10px);
 }
 
 .comingsoon-text {
   margin: 0 0 28px;
-  font-size: 20px;  
+  font-size: 20px;
   line-height: 1.5;
 }
-
 
 .comingsoon-close {
   border: none;
   outline: none;
 
-  padding: 12px 32px;        
+  padding: 12px 32px;
   border-radius: 999px;
 
-  background: var(--red); 
+  background: var(--red);
   color: var(--bg-white);
-  font-size: 16px;           
+  font-size: 16px;
   cursor: pointer;
-  letter-spacing: 0.03em;   
+  letter-spacing: 0.03em;
 }
 
 .comingsoon-close:hover {
-  background: var(--red-hover);       
+  background: var(--red-hover);
 }
 
+/* LOGO */
 .logo {
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 300;
@@ -267,7 +268,7 @@ a {
   justify-self: center;
 }
 
-/* --- CART --- */
+/* CART */
 .cart-btn {
   justify-self: end;
   position: relative;
@@ -304,22 +305,20 @@ a {
   border-radius: 999px;
   border: 2px solid var(--green);
   font: 600 12px/1 "Arimo", system-ui, sans-serif;
-  display: none; /* samme som products-siden */
+  display: none;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
 
-
-
 /* ========================================
-   2. HERO – DESKTOP
+   HERO – DESKTOP
    ======================================== */
 
 .hero {
   position: relative;
   overflow: hidden;
-  width: 100%; 
+  width: 100%;
 }
 
 .hero-img {
@@ -373,10 +372,9 @@ a {
 
 
 /* ========================================
-   3. CARD SECTION – DESKTOP
+   SEASONAL + CHAT – DESKTOP
    ======================================== */
 
-/* Seksjonen: full bredde hvit bakgrunn */
 .cards-2 {
   background: var(--bg-white);
   padding: 90px 45px;
@@ -385,7 +383,6 @@ a {
   box-sizing: border-box;
 }
 
-/* Innholdet inni: 1512px bredde og grid */
 .cards-2 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -393,7 +390,6 @@ a {
   position: relative;
 }
 
-/* Vertikal linje følger innholdet, ikke hele skjermen */
 .cards-2 .container::before {
   content: "";
   position: absolute;
@@ -457,7 +453,7 @@ a {
 
 
 /* ========================================
-   4. BUTTONS
+   BUTTONS
    ======================================== */
 
 .btn {
@@ -491,12 +487,12 @@ a {
 
 
 /* ========================================
-   5. HOW IT WORKS – DESKTOP
+   HOW IT WORKS – DESKTOP
    ======================================== */
 
 .how {
   background: var(--bg-primary);
-  width: 100%;              
+  width: 100%;
   max-width: none;
   margin: 0 auto;
   display: flex;
@@ -563,7 +559,7 @@ a {
 }
 
 /* ========================================
-   6. POPULAR PRODUCE – DESKTOP
+   POPULAR PRODUCE – DESKTOP
    ======================================== */
 
 .popular {
@@ -641,7 +637,7 @@ a {
   border-radius: 16px;
 }
 
-/* --- ADD TO BASKET KNAPP --- */
+/* --- ADD TO BASKET BUTTON --- */
 .add-btn {
   position: absolute;
   right: 16px;
@@ -677,7 +673,7 @@ a {
   align-items: center;
 }
 
-/* Inni kontrollknappen */
+/* BUTTON COUNT */
 .qty-control {
   width: 100%;
   display: flex;
@@ -687,12 +683,12 @@ a {
 }
 
 .qty-btn {
-  background: none;        
-  border: none;             
-  padding: 0 6px;              
-  color: var(--text-dark);           
-  font-size: 18px;   
-  font-weight: 400;       
+  background: none;
+  border: none;
+  padding: 0 6px;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -701,7 +697,7 @@ a {
 }
 
 .qty-btn:hover {
-  opacity: 0.6;             
+  opacity: 0.6;
 }
 
 .qty-number {
@@ -726,14 +722,14 @@ a {
 
 
 /* ========================================
-   7. FOOTER – DESKTOP
+   FOOTER – DESKTOP
    ======================================== */
 
 .footer-topline {
   background: var(--red);
   height: 113px;
   position: relative;
-  width: 100%;         
+  width: 100%;
   max-width: none;
   margin: 0;
 }
@@ -794,9 +790,10 @@ a {
   font-size: 20px;
   margin: 0 0 70px 0;
   width: 330px;
-  
+
 }
 
+/* FORM */
 .footer-form {
   display: flex;
   flex-direction: column;
@@ -833,7 +830,7 @@ a {
 
 .footer-submit {
   position: absolute;
-  right: 12px;  
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -858,31 +855,31 @@ a {
 }
 
 /* ========================================
-   8. POP-UP – DESKTOP
+   POP-UP – DESKTOP
    ======================================== */
 
 .newsletter-popup {
   position: fixed;
   left: 50%;
-  bottom: 300px; 
+  bottom: 300px;
   transform: translateX(-50%);
 
   background: var(--bg-primary);
-  border: 1px solid var(--boarder-light); 
+  border: 1px solid var(--boarder-light);
   border-radius: 4px;
 
   box-sizing: content-box;
   padding: 40px 40px;
-  width: 400px;          
+  width: 400px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 
-  color: var(--text-dark);       
+  color: var(--text-dark);
   font-family: 'Arimo', sans-serif;
 
   opacity: 0;
@@ -893,7 +890,7 @@ a {
 .newsletter-popup.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(-10px); 
+  transform: translateX(-50%) translateY(-10px);
 }
 
 .newsletter-popup-text {
@@ -909,7 +906,7 @@ a {
   padding: 12px 32px;
   border-radius: 999px;
 
-  background: var(--red); 
+  background: var(--red);
   color: var(--bg-white);
   font-size: 16px;
   cursor: pointer;
@@ -921,12 +918,12 @@ a {
 }
 
 /* ========================================
-   MOBILE – 768PX 
+   MOBILE 0-768PX 
    ======================================== */
 
 @media (max-width: 768px) {
-  
-   /* ---- HEADER / NAV – MOBILE ---- */
+
+  /* ---- HEADER / NAV – MOBILE ---- */
 
   .header-inner {
     padding: 0 16px;
@@ -936,6 +933,7 @@ a {
     margin-right: 16px;
   }
 
+  /* POPUP MENU */
   .menu-overlay {
     left: 0;
     width: 100%;
@@ -985,23 +983,21 @@ a {
     margin-top: 34.5px;
   }
 
-  /* ---- CARD SECTION – MOBILE ---- */
+  /* ---- SEASONAL + CHAT – MOBILE ---- */
 
   .cards-2 {
-  position: relative;
-  padding: 90px 24px 0;
-}
+    position: relative;
+    padding: 90px 24px 0;
+  }
 
-/* grid flyttes inn hit */
-.cards-2 .container {
-  display: grid;
-  grid-template-columns: 1fr;
-}
+  .cards-2 .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 
-  /* skjul den vertikale linja på mobil */
-.cards-2 .container::before {
-  display: none;
-}
+  .cards-2 .container::before {
+    display: none;
+  }
 
   .cards-2::after {
     content: "";
@@ -1016,11 +1012,11 @@ a {
   .card:first-child {
     border-bottom: 1px solid var(--text-dark);
     padding-bottom: 90px;
-    margin-bottom: 58px;     
+    margin-bottom: 58px;
   }
 
   .card {
-    min-height: auto;   
+    min-height: auto;
     padding: 32px 16px 40px;
   }
 
@@ -1108,7 +1104,7 @@ a {
   }
 
   .how-step:last-child {
-    padding-bottom: 45px; 
+    padding-bottom: 45px;
   }
 
   .how-step-title {
@@ -1132,7 +1128,7 @@ a {
   }
 
   .popular-title {
-    margin-top: 16px;  
+    margin-top: 16px;
   }
 
   /* horisontal scroll */
@@ -1189,7 +1185,7 @@ a {
 
   .product-price {
     position: absolute;
-    top: calc(321px + 16px); 
+    top: calc(321px + 16px);
     right: 0;
     font-family: "Arimo", sans-serif;
     font-weight: 400;
@@ -1242,17 +1238,17 @@ a {
 /* ========================================
    TABLET – 769PX–1400PX
    ======================================== */
-   
+
 @media (min-width: 769px) and (max-width: 1400px) {
 
   /* ---- HERO – TABLET ---- */
 
   .hero-img {
-    height: 650px;          
+    height: 650px;
   }
 
   .hero-title {
-    font-size: 140px;      
+    font-size: 140px;
   }
 
   .hero-title::after {
@@ -1330,7 +1326,7 @@ a {
     margin: 0;
   }
 
-  /* ---- CARD SECTION – TABLET ---- */
+  /* ---- SEASONAL + CHAT – TABLET ---- */
 
   .subheader {
     font-size: 28px;
@@ -1411,7 +1407,7 @@ a {
     padding-right: 0;
   }
 
-/* ---- FOOTER – TABLET ---- */
+  /* ---- FOOTER – TABLET ---- */
 
   .footer-inner {
     flex-direction: column;
@@ -1427,5 +1423,3 @@ a {
     margin-top: 24px;
   }
 }
-
-

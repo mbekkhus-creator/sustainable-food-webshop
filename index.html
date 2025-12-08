@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Frank+Ruhl+Libre:wght@300;400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
@@ -13,61 +14,52 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
-   <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="header-inner">
-      <button class="hamburger" 
-      aria-label="Åpne meny"
-      aria-controls="mobileMenu"
-      aria-expanded="false">
+      <button class="hamburger" aria-label="Åpne meny" aria-controls="mobileMenu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
       <a class="logo" href="index.html">FRAM</a>
     </div>
 
+    <!-- CART -->
     <button class="cart-btn" aria-label="Handlekurv">
-      <!-- handlekurv-ikon -->
-      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b0a08" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+        stroke="#0b0a08" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="21" r="1" />
         <circle cx="20" cy="21" r="1" />
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
       </svg>
 
-      <!-- tall (badge) til handlekurv-->
       <span class="cart-count" id="cart-count" aria-live="polite">0</span>
     </button>
   </header>
 
-   <!-- POPUP-MENY -->
-<div class="menu-overlay" 
-id="mobileMenu" 
-aria-hidden="true"
-role="dialog"
-aria-modal="true">
-  <button class="menu-close" aria-label="Close menu">&times;</button>
+  <!-- POPUP MENU -->
+  <div class="menu-overlay" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="menu-close" aria-label="Close menu">&times;</button>
 
-  <div class="menu-inner">
-    <!-- Topp-linje med FRAM -->
-    <div class="menu-bar">
-      <span class="menu-logo">FRAM</span>
-    </div>
+    <div class="menu-inner">
+      <div class="menu-bar">
+        <span class="menu-logo">FRAM</span>
+      </div>
 
-    <!-- Sentrerte lenker -->
-    <nav class="menu-nav">
-      <a href="index.html">HOME</a>
-      <a href="products.html">PRODUCTS</a>
-      <a href="chatbot.html">CHAT</a>
-    </nav>
+      <!-- LINKS -->
+      <nav class="menu-nav">
+        <a href="index.html">HOME</a>
+        <a href="products.html">PRODUCTS</a>
+        <a href="chatbot.html">CHAT</a>
+      </nav>
 
-    <!-- Checkout nederst -->
-    <div class="menu-footer">
-      <a href="checkout.html" id="checkoutLink">CHECKOUT</a>
+      <div class="menu-footer">
+        <a href="checkout.html" id="checkoutLink">CHECKOUT</a>
+      </div>
     </div>
   </div>
-</div>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <img class="hero-img" src="images/headerImage.png" alt="Green mountains and sky" />
     <div class="hero-overlay">
@@ -78,213 +70,198 @@ aria-modal="true">
 
   <main id="main">
 
-    <!-- Two cards: Seasonal + Chat -->
-<section class="cards-2">
-  <div class="container">
-  <article class="card">
-    <h2 class="subheader">SHOP OUR SEASONAL <br>SELECTION</h2>
-    <p class="accent">Updated every week</p>
+    <!-- SEASONAL + CHAT -->
+    <section class="cards-2">
+      <div class="container">
 
-    <img
-      src="images/ShopSelection.png"
-      alt="Seasonal vegetables"
-      loading="lazy">
+        <!-- SEASONAL -->
+        <article class="card">
+          <h2 class="subheader">SHOP OUR SEASONAL <br>SELECTION</h2>
+          <p class="accent">Updated every week</p>
 
-    <p class="body">
-      New produce is added continuously as time goes by and the seasons change.
-    </p>
-    <a class="btn btn-red" href="products.html">Browse our selection</a>
-  </article>
+          <img src="images/ShopSelection.png" alt="Seasonal vegetables" loading="lazy">
 
-  <article class="card">
-    <h2 class="subheader">ASK US ABOUT <br>ANYTHING</h2>
-    <p class="accent">All your questions answered</p>
+          <p class="body">
+            New produce is added continuously as time goes by and the seasons change.
+          </p>
+          <a class="btn btn-red" href="products.html">Browse our selection</a>
+        </article>
 
-    <img
-      src="images/goToChat.png"
-      alt="Farmer in a field"
-      loading="lazy"
-    >
+        <!-- ASK US -->
+        <article class="card">
+          <h2 class="subheader">ASK US ABOUT <br>ANYTHING</h2>
+          <p class="accent">All your questions answered</p>
 
-    <p class="body">
-      New produce is added continuously as time goes by and the seasons change.
-    </p>
-    <a id="chat" class="btn btn-red" href="chatbot.html">Go to chat</a>
-  </article>
-</section>
+          <img src="images/goToChat.png" alt="Farmer in a field" loading="lazy">
 
-    <!-- How it works -->
+          <p class="body">
+            New produce is added continuously as time goes by and the seasons change.
+          </p>
+          <a id="chat" class="btn btn-red" href="chatbot.html">Go to chat</a>
+        </article>
+    </section>
+
+    <!-- HOW IT WORKS -->
     <section class="how">
-  <div class="how-left">
-   <h2 class="how-title">
-  THIS IS HOW IT<br> WORKS
-</h2>
-  </div>
-
-  <div class="how-right">
-    <div class="how-step">
-      <h3 class="how-step-title">ORDER GROCERIES</h3>
-      <p class="how-step-body">
-         Fram is a circular service that ensures your kitchen is always stocked with the essentials you need.
-    Browse our seasonal selection, choose your items, and place your order online.<br><br>
-    <a href="products.html">See our stock here</a>
-      </p>
-    </div>
-
-    <div class="how-step">
-      <h3 class="how-step-title">STOCK UP</h3>
-      <p class="how-step-body">
-        Once your order arrives, unpack the produce and store it however it works best for you. Hold onto the containers—they’re yours to keep until your next order.
-      </p>
-    </div>
-
-    <div class="how-step">
-      <h3 class="how-step-title">SCAN &amp; REORDER</h3>
-      <p class="how-step-body">
-        Ready for a refill? Grab the containers from your last order and scan the QR code with our app or your phone’s camera. This instantly adds the items back to your cart, making reordering a breeze.
-      </p>
-    </div>
-
-    <div class="how-step">
-      <h3 class="how-step-title">SWAP &amp; REUSE</h3>
-      <p class="how-step-body">
-        When we deliver your new order, simply leave your empty containers outside. We’ll pick them up, clean them thoroughly, and reuse them for future deliveries.
-      </p>
-    </div>
-  </div>
-</section>
-
-
- <!-- Popular produce -->
-<section class="popular">
-  <h2 class="popular-title">Popular produce</h2>
-  <div class="product-grid">
-
-    <!-- Card 1 -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="images/OATS.png" alt="Oats">
-        <button class="add-btn" data-product="oats" aria-label="Add Oats to basket">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7" />
-          </svg>
-        </button>
+      <div class="how-left">
+        <h2 class="how-title">
+          THIS IS HOW IT<br> WORKS
+        </h2>
       </div>
-      <h3 class="product-name">Oats</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">16 kr / kg</span>
-      </div>
-    </article>
 
-    <!-- Card 2 -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="images/REDONIONS.png" alt="Red Onions">
-        <button class="add-btn" data-product="redonions"aria-label="Add Red Onions to basket">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7" />
-          </svg>
-        </button>
-      </div>
-      <h3 class="product-name">Red Onions</h3>
-      <div class="product-info">
-        <span class="product-weight">1 kg</span>
-        <span class="product-price">45 kr / kg</span>
-      </div>
-    </article>
+      <div class="how-right">
+        <div class="how-step">
+          <h3 class="how-step-title">ORDER GROCERIES</h3>
+          <p class="how-step-body">
+            Fram is a circular service that ensures your kitchen is always stocked with the essentials you need.
+            Browse our seasonal selection, choose your items, and place your order online.<br><br>
+            <a href="products.html">See our stock here</a>
+          </p>
+        </div>
 
-    <!-- Card 3 -->
-    <article class="product-card">
-      <div class="product-media">
-        <img src="images/GARLIC.png" alt="Garlic">
-        <button class="add-btn" data-product="garlic" aria-label="Add Garlic to basket">
-          Add to basket
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21V3 M5 10l7-7 7 7" />
-          </svg>
-        </button>
+        <div class="how-step">
+          <h3 class="how-step-title">STOCK UP</h3>
+          <p class="how-step-body">
+            Once your order arrives, unpack the produce and store it however it works best for you. Hold onto the
+            containers—they’re yours to keep until your next order.
+          </p>
+        </div>
+
+        <div class="how-step">
+          <h3 class="how-step-title">SCAN &amp; REORDER</h3>
+          <p class="how-step-body">
+            Ready for a refill? Grab the containers from your last order and scan the QR code with our app or your
+            phone’s camera. This instantly adds the items back to your cart, making reordering a breeze.
+          </p>
+        </div>
+
+        <div class="how-step">
+          <h3 class="how-step-title">SWAP &amp; REUSE</h3>
+          <p class="how-step-body">
+            When we deliver your new order, simply leave your empty containers outside. We’ll pick them up, clean them
+            thoroughly, and reuse them for future deliveries.
+          </p>
+        </div>
       </div>
-      <h3 class="product-name">Garlic</h3>
-      <div class="product-info">
-        <span class="product-weight">1 pk (200 g)</span>
-        <span class="product-price">38 kr / pk</span>
+    </section>
+
+    <!-- POPULAR PRODUCE -->
+    <section class="popular">
+      <h2 class="popular-title">Popular produce</h2>
+      <div class="product-grid">
+
+        <!-- OATS -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/OATS.png" alt="Oats">
+            <button class="add-btn" data-product="oats" aria-label="Add Oats to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Oats</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">16 kr / kg</span>
+          </div>
+        </article>
+
+        <!-- RED ONIONS -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/REDONIONS.png" alt="Red Onions">
+            <button class="add-btn" data-product="redonions" aria-label="Add Red Onions to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Red Onions</h3>
+          <div class="product-info">
+            <span class="product-weight">1 kg</span>
+            <span class="product-price">45 kr / kg</span>
+          </div>
+        </article>
+
+        <!-- GARLIC -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/GARLIC.png" alt="Garlic">
+            <button class="add-btn" data-product="garlic" aria-label="Add Garlic to basket">
+              Add to basket
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21V3 M5 10l7-7 7 7" />
+              </svg>
+            </button>
+          </div>
+          <h3 class="product-name">Garlic</h3>
+          <div class="product-info">
+            <span class="product-weight">1 pk (200 g)</span>
+            <span class="product-price">38 kr / pk</span>
+          </div>
+        </article>
       </div>
-    </article>
-  </div>
-</section>
+    </section>
   </main>
 
-  <!-- Footer -->
-<section class="footer-topline">
-  <div class="footer-inner">
-    <h2 class="footer-logo">FRAM</h2>
-  </div>
-</section>
+  <!-- FOOTER -->
+  <section class="footer-topline">
+    <div class="footer-inner">
+      <h2 class="footer-logo">FRAM</h2>
+    </div>
+  </section>
 
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-right">
       <h3 class="footer-title">STAY UPDATED</h3>
       <p class="footer-text">
         Sign up for our newsletter to be the first to know about new produce or other exciting news!
       </p>
 
- <form class="footer-form">
-  <label class="visually-hidden" for="footer-firstname">First name</label>
-  <input
-    id="footer-firstname"
-    type="text"
-    class="footer-input"
-    placeholder="First name"
-  >
+      <form class="footer-form">
+        <label class="visually-hidden" for="footer-firstname">First name</label>
+        <input id="footer-firstname" type="text" class="footer-input" placeholder="First name">
 
-  <div class="footer-email-group">
-    <label class="visually-hidden" for="footer-email">E-mail address</label>
-    <input
-      id="footer-email"
-      type="email"
-      class="footer-input email-input"
-      placeholder="E-mail address"
-      required
-    >
-    <button class="footer-submit" aria-label="Submit email">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M13 5l7 7-7 7"/>
-      </svg>
+        <div class="footer-email-group">
+          <label class="visually-hidden" for="footer-email">E-mail address</label>
+          <input id="footer-email" type="email" class="footer-input email-input" placeholder="E-mail address" required>
+          <button class="footer-submit" aria-label="Submit email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </footer>
+
+  <!-- NEWSLETTER POPUP -->
+  <div class="newsletter-popup" id="newsletterPopup" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="newsletterPopupTitle">
+    <p id="newsletterPopupTitle" class="newsletter-popup-text">
+      You’re in! Expect fresh updates from our partner farms in your inbox soon.
+    </p>
+    <button type="button" class="newsletter-popup-close">
+      Got it!
     </button>
   </div>
-</form>
-    </div>
-</footer>
 
-<div class="newsletter-popup" 
-id="newsletterPopup" 
-aria-hidden="true"
-role="dialog"
-aria-modal="true"
-aria-labelledby="newsletterPopupTitle">
-  <p id="newsletterPopupTitle" class="newsletter-popup-text">
-    You’re in! Expect fresh updates from our partner farms in your inbox soon.
-  </p>
-  <button type="button" class="newsletter-popup-close">
-    Got it!
-  </button>
-</div>
+  <!-- CHECKOUT POPUP -->
+  <div class="comingsoon-popup" id="comingSoonPopup" aria-hidden="true">
+    <p class="comingsoon-text">
+      Checkout is coming soon! This feature is currently under construction.
+    </p>
+    <button type="button" class="comingsoon-close">Got it!</button>
+  </div>
 
-<!-- Coming soon popup -->
-<div class="comingsoon-popup" id="comingSoonPopup" aria-hidden="true">
-  <p class="comingsoon-text">
-    Checkout is coming soon! This feature is currently under construction.
-  </p>
-  <button type="button" class="comingsoon-close">Got it!</button>
-</div>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
