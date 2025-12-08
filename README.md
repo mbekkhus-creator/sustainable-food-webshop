@@ -270,6 +270,12 @@ The “SEE OUR PARTNERING FARMS” section on products.html embeds a Google Maps
 
 ---
 
+## AI Assistance
+
+Parts of this project were developed with assistance from ChatGPT, used as a tool for debugging, code suggestions, accessibility improvements, and general frontend guidance. All final design and implementation decisions were made by us.
+
+---
+
 ## Known Issues / Limitations
 
 - Checkout is not implemented – only a “Coming soon” popup.
